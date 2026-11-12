@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 600 760" role="img" aria-label="no dank. — Aktivkohle-Säckchen, 50 g, gefüllt, Kordelzug zugezogen (Produktplatzhalter)">
+  <defs>
+    <linearGradient id="fabricFull" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF8F2"/>
+      <stop offset=".5" stop-color="#F6F2EA"/>
+      <stop offset="1" stop-color="#EAE5D9"/>
+    </linearGradient>
+    <linearGradient id="fabricSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#6B645A" stop-opacity=".14"/>
+      <stop offset=".12" stop-color="#6B645A" stop-opacity="0"/>
+      <stop offset=".86" stop-color="#6B645A" stop-opacity="0"/>
+      <stop offset="1" stop-color="#6B645A" stop-opacity=".14"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="fabricNoise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.42  0 0 0 0 0.39  0 0 0 0 0.35  0 0 0 0.05 0"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+
+  <!-- Bodenschatten (voller Sack → breiter) -->
+  <ellipse cx="300" cy="620" rx="225" ry="22" fill="#6B645A" opacity=".2" filter="url(#soft)"/>
+
+  <!-- Kordeln: STRAFF gezogen, nach oben gespannt -->
+  <g fill="none" stroke="#DDD7CA" stroke-width="5" stroke-linecap="round">
+    <path d="M384 196 C418 172 442 146 452 116"/>
+    <path d="M216 196 C182 172 158 146 148 116"/>
+  </g>
+  <!-- straffe Knoten dicht am Sack -->
+  <circle cx="452" cy="110" r="8.5" fill="#DDD7CA" stroke="#B5AEA3" stroke-width="1"/>
+  <circle cx="148" cy="110" r="8.5" fill="#DDD7CA" stroke="#B5AEA3" stroke-width="1"/>
+  <!-- Kordelspitzen nach oben stehend -->
+  <rect x="446" y="72" width="11" height="26" rx="5" fill="#E9E4D9" stroke="#B5AEA3" stroke-width="1" transform="rotate(8 451 85)"/>
+  <rect x="143" y="72" width="11" height="26" rx="5" fill="#E9E4D9" stroke="#B5AEA3" stroke-width="1" transform="rotate(-8 148 85)"/>
+
+  <!-- Säckchen-Körper: GEFÜLLT, bauchig, oben gerafft -->
+  <g>
+    <!-- Körper: bauchige Silhouette -->
+    <path id="body" d="M214 176 C172 246 150 348 152 452 C154 542 184 604 236 614 Q300 628 364 614 C416 604 446 542 448 452 C450 348 428 246 386 176 Q352 158 300 158 Q248 158 214 176 Z" fill="url(#fabricFull)"/>
+    <path d="M214 176 C172 246 150 348 152 452 C154 542 184 604 236 614 Q300 628 364 614 C416 604 446 542 448 452 C450 348 428 246 386 176 Q352 158 300 158 Q248 158 214 176 Z" fill="url(#fabricSide)"/>
+    <path d="M214 176 C172 246 150 348 152 452 C154 542 184 604 236 614 Q300 628 364 614 C416 604 446 542 448 452 C450 348 428 246 386 176 Q352 158 300 158 Q248 158 214 176 Z" fill="#6B645A" filter="url(#fabricNoise)" opacity=".5"/>
+
+    <!-- Fülle-Spannung: dezente vertikale Spannfalten -->
+    <g stroke="#6B645A" stroke-width="2" opacity=".07" fill="none">
+      <path d="M205 260 C192 360 194 480 214 580"/>
+      <path d="M258 240 C250 350 252 480 262 596"/>
+      <path d="M342 240 C350 350 348 480 338 596"/>
+      <path d="M395 260 C408 360 406 480 386 580"/>
+    </g>
+    <!-- Bauch-Highlight -->
+    <ellipse cx="300" cy="470" rx="150" ry="120" fill="#FFFFFF" opacity=".28"/>
+
+    <!-- Geraffter Hals (Kordelzug zugezogen) -->
+    <g>
+      <path d="M214 176 Q300 146 386 176 Q352 200 300 200 Q248 200 214 176 Z" fill="#EFEBE2" stroke="#948B7E" stroke-width="1.3"/>
+      <!-- Raffungs-Fältchen -->
+      <g stroke="#6B645A" stroke-width="1.5" opacity=".22">
+        <path d="M232 172 L238 194"/><path d="M258 166 L262 196"/><path d="M300 162 L300 198"/>
+        <path d="M342 166 L338 196"/><path d="M368 172 L362 194"/>
+      </g>
+      <!-- Kordelaustritte aus dem Kanal -->
+      <ellipse cx="216" cy="192" rx="6" ry="8" fill="#E4DFD4" stroke="#948B7E" stroke-width="1.2"/>
+      <ellipse cx="384" cy="192" rx="6" ry="8" fill="#E4DFD4" stroke="#948B7E" stroke-width="1.2"/>
+      <!-- Kanal-Stichlinie -->
+      <path d="M222 184 Q300 158 378 184" fill="none" stroke="#948B7E" stroke-width="1.2" stroke-dasharray="5 4" opacity=".6"/>
+    </g>
+
+    <!-- Logo-Druck: ECHTES Logo (assets/logo.svg) -->
+    <image xlink:href="logo.svg" href="logo.svg" x="185" y="386" width="230" height="42.4"/>
+
+    <!-- Zugband unter dem Logo -->
+    <text x="300" y="466" text-anchor="middle" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="500" font-size="13" letter-spacing="3.5" fill="#6B645A" opacity=".75">50 g · AKTIVKOHLE</text>
+  </g>
+
+  <!-- Gestankpunkte (werden absorbiert) -->
+  <g fill="#D8FF3E">
+    <circle cx="108" cy="150" r="8" opacity=".9"/>
+    <circle cx="74" cy="216" r="6" opacity=".7"/>
+    <circle cx="482" cy="128" r="7" opacity=".85"/>
+    <circle cx="518" cy="196" r="5" opacity=".65"/>
+    <circle cx="498" cy="266" r="4.5" opacity=".55"/>
+  </g>
+</svg>

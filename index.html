@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!-- TODO(DECISION: Domain) — canonical/OG-URL auf https://nodank.ch setzen, sobald Domain gekauft ist -->
+<!-- TODO(DECISION: QR-Redirect) — /qr als stabile Weiterleitung auf diese Seite einrichten (Host-Konfig) -->
+<!-- TODO(DECISION: Analytics) — ggf. Plausible o. ä. ergänzen -->
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>no dank. — Gerüche. Einfach weg.</title>
+<meta name="description" content="„no dank." ist ein Säckchen mit 50 g Aktivkohle-Granulat aus Kokosschalen. Es bindet Gerüche in geschlossenen Räumen — nicht durch Parfüm, sondern durch Physik.">
+<meta name="theme-color" content="#EFEAE0">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="canonical" href="https://nodank.ch/">
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="no dank.">
+<meta property="og:title" content="no dank. — Gerüche. Einfach weg.">
+<meta property="og:description" content="50 g Aktivkohle aus Kokosschalen binden Gerüche in geschlossenen Räumen. Nicht durch Parfüm — durch Physik.">
+<meta property="og:url" content="https://nodank.ch/">
+<meta property="og:locale" content="de_CH">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://nodank.ch/assets/og-image.png"> <!-- generiert aus assets/og-image.svg; bei Domainwechsel neu rendern -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="no dank. — Gerüche. Einfach weg.">
+<meta name="twitter:description" content="50 g Aktivkohle aus Kokosschalen binden Gerüche in geschlossenen Räumen. Nicht durch Parfüm — durch Physik.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Zum Inhalt springen</a>
+
+<header class="site-header" id="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="no dank. — Startseite">
+      <img src="assets/logo.svg" alt="no dank." width="239" height="44">
+    </a>
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      <a href="#wirkung" data-i18n="nav.wirkung">Wirkung</a>
+      <a href="#dosierung" data-i18n="nav.dosierung">Dosierung</a>
+      <a href="#pflege" data-i18n="nav.pflege">Pflege</a>
+      <a href="#haendler" class="nav-accent" data-i18n="nav.haendler">Händler:innen</a>
+    </nav>
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language">
+      <span class="lang-opt" data-lang="de">DE</span><span class="lang-sep" aria-hidden="true">/</span><span class="lang-opt" data-lang="en">EN</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy reveal">
+        <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Aktivkohle-Geruchsfilter · 50 g · Kokosschalen</span></p>
+        <h1 data-i18n="hero.title">Gerüche.<br>Einfach <span class="lime-dot-end">weg</span>.</h1>
+        <p class="hero-sub" data-i18n="hero.sub">„no dank." ist ein Säckchen mit 50&nbsp;g Aktivkohle-Granulat aus Kokosschalen. Es bindet Gerüche in geschlossenen Räumen — nicht durch Parfüm, sondern durch Physik.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#wirkung" data-i18n="hero.cta">So funktioniert's</a>
+          <a class="btn btn-ghost" href="#dosierung" data-i18n="hero.cta2">Dosierung berechnen</a>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-product-wrap">
+          <span class="hero-blob" aria-hidden="true"></span>
+          <figure class="hero-photo">
+            <img src="assets/product-front-logo.png" width="460" height="420" alt="„no dank." Säckchen — weisser Non-Woven-Beutel mit Kordelzug und Logo-Stitch-Print (Produktbild)">
+          </figure>
+          <span class="hero-stink st-a" aria-hidden="true"></span>
+          <span class="hero-stink st-b" aria-hidden="true"></span>
+          <span class="hero-stink st-c" aria-hidden="true"></span>
+          <span class="hero-stink st-d" aria-hidden="true"></span>
+          <span class="hero-stink st-e" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WIRKUNG ============ -->
+  <section class="section" id="wirkung">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="wirkung.eyebrow">Wie es funktioniert</p>
+      <div class="split">
+        <div class="reveal">
+          <h2 data-i18n="wirkung.title">Physik statt Parfüm.</h2>
+          <p class="lead" data-i18n="wirkung.p1">Aktivkohle hat eine riesige innere Oberfläche — ein einziges Gramm hat die Fläche eines Tennisplatzes. Geruchsmoleküle lagern sich an dieser Oberfläche an (<strong>Adsorption</strong>) und bleiben dort. Es wird nichts überdeckt, es wird nichts maskiert: Der Geruch verschwindet, weil er gebunden wird.</p>
+          <div class="callout reveal">
+            <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
+            <p data-i18n="wirkung.diff"><strong>Der Unterschied zu Duftsprays:</strong> Sprays fügen einen neuen Geruch hinzu. Aktivkohle nimmt den alten weg.</p>
+          </div>
+        </div>
+        <div class="viz-card reveal" aria-label="Animation: Geruchsmoleküle werden von Aktivkohle gebunden">
+          <svg class="adsorption-svg" viewBox="0 0 480 400" role="img">
+            <defs>
+              <clipPath id="granuleZone"><rect x="0" y="250" width="480" height="150"/></clipPath>
+            </defs>
+            <!-- Geruchsmoleküle (werden adsorbiert) -->
+            <g class="molecules">
+              <circle class="mol" style="--x:40;  --d:0s;    --t:7s"   cx="40"  cy="20" r="7"   fill="#D8FF3E"/>
+              <circle class="mol" style="--x:95;  --d:-1.4s; --t:8s"   cx="95"  cy="10" r="5.5" fill="#D8FF3E"/>
+              <circle class="mol" style="--x:150; --d:-3s;   --t:7.5s" cx="150" cy="24" r="8"   fill="#D8FF3E"/>
+              <circle class="mol" style="--x:205; --d:-2.2s; --t:6.8s" cx="205" cy="8"  r="5"   fill="#D8FF3E"/>
+              <circle class="mol" style="--x:260; --d:-4.5s; --t:8.4s" cx="260" cy="18" r="6.5" fill="#D8FF3E"/>
+              <circle class="mol" style="--x:318; --d:-1s;   --t:7.2s" cx="318" cy="12" r="5.5" fill="#D8FF3E"/>
+              <circle class="mol" style="--x:372; --d:-5.5s; --t:7.8s" cx="372" cy="22" r="7.5" fill="#D8FF3E"/>
+              <circle class="mol" style="--x:428; --d:-3.6s; --t:6.5s" cx="428" cy="14" r="5"   fill="#D8FF3E"/>
+            </g>
+            <!-- Granulatschicht -->
+            <g clip-path="url(#granuleZone)">
+              <rect x="0" y="252" width="480" height="148" fill="#E7E1D6"/>
+              <g class="granules" fill="#948B7E">
+                <circle cx="18"  cy="268" r="14"/><circle cx="55"  cy="262" r="11"/><circle cx="88" cy="272" r="15"/>
+                <circle cx="126" cy="264" r="12"/><circle cx="160" cy="274" r="15"/><circle cx="200" cy="263" r="11"/>
+                <circle cx="236" cy="272" r="14"/><circle cx="272" cy="264" r="12"/><circle cx="308" cy="274" r="15"/>
+                <circle cx="346" cy="263" r="11"/><circle cx="382" cy="272" r="14"/><circle cx="420" cy="264" r="12"/>
+                <circle cx="455" cy="273" r="14"/><circle cx="36"  cy="292" r="15"/><circle cx="76" cy="300" r="13"/>
+                <circle cx="114" cy="292" r="15"/><circle cx="154" cy="302" r="13"/><circle cx="194" cy="293" r="15"/>
+                <circle cx="234" cy="302" r="13"/><circle cx="274" cy="293" r="15"/><circle cx="314" cy="302" r="13"/>
+                <circle cx="354" cy="293" r="15"/><circle cx="394" cy="302" r="13"/><circle cx="434" cy="293" r="15"/>
+                <circle cx="468" cy="301" r="13"/>
+              </g>
+              <g class="granules-dark" fill="#6B645A">
+                <circle cx="18" cy="334" r="16"/><circle cx="62" cy="342" r="14"/><circle cx="108" cy="334" r="16"/>
+                <circle cx="154" cy="343" r="14"/><circle cx="200" cy="334" r="16"/><circle cx="246" cy="343" r="14"/>
+                <circle cx="292" cy="334" r="16"/><circle cx="338" cy="343" r="14"/><circle cx="384" cy="334" r="16"/>
+                <circle cx="430" cy="343" r="14"/><circle cx="470" cy="336" r="15"/><circle cx="40" cy="376" r="18"/>
+                <circle cx="96" cy="384" r="16"/><circle cx="152" cy="375" r="18"/><circle cx="208" cy="384" r="16"/>
+                <circle cx="264" cy="375" r="18"/><circle cx="320" cy="384" r="16"/><circle cx="376" cy="375" r="18"/>
+                <circle cx="432" cy="384" r="16"/><circle cx="478" cy="376" r="17"/>
+              </g>
+              <!-- haftende Moleküle an der Oberfläche -->
+              <g fill="#D8FF3E">
+                <circle class="stuck" cx="70"  cy="255" r="4"/><circle class="stuck" cx="180" cy="258" r="4"/>
+                <circle class="stuck" cx="290" cy="255" r="4"/><circle class="stuck" cx="395" cy="258" r="4"/>
+              </g>
+            </g>
+            <path d="M0 252 H480" stroke="#6B645A" stroke-width="1.5" opacity=".3"/>
+            <text x="16" y="34" class="svg-label" data-i18n="wirkung.svgOdors">Geruchsmoleküle</text>
+            <text x="16" y="242" class="svg-label" data-i18n="wirkung.svgCarbon">Aktivkohle-Granulat</text>
+          </svg>
+          <p class="viz-caption reveal" data-i18n="wirkung.caption">Adsorption: Moleküle haften an der inneren Oberfläche der Kohle — dauerhaft, ohne Duftstoffe.</p>
+        </div>
+      </div>
+      <!-- Tennisplatz-Vergleich -->
+      <div class="compare reveal">
+        <div class="compare-item">
+          <div class="compare-visual"><span class="compare-granule" aria-hidden="true"></span></div>
+          <p class="compare-num" data-i18n="wirkung.compareNum1">1 g</p>
+          <p class="compare-label" data-i18n="wirkung.compare1">Aktivkohle — winzig, unscheinbar</p>
+        </div>
+        <div class="compare-arrow" aria-hidden="true">
+          <svg viewBox="0 0 60 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 12 H52M44 4l10 8-10 8"/></svg>
+        </div>
+        <div class="compare-item">
+          <div class="compare-visual"><span class="compare-court" aria-hidden="true"></span></div>
+          <p class="compare-num" data-i18n="wirkung.compareNum2">≈ 1 Tennisplatz</p>
+          <p class="compare-label" data-i18n="wirkung.compare2">innere Oberfläche, an der Gerüche gebunden werden</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOSIERUNG ============ -->
+  <section class="section section-alt" id="dosierung">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="dosis.eyebrow">Dosierung</p>
+      <div class="split">
+        <div class="reveal">
+          <h2 data-i18n="dosis.title">Die Faustregel: 50–100&nbsp;g pro m³.</h2>
+          <p class="lead" data-i18n="dosis.p1">Ein Säckchen (50&nbsp;g) ist ideal für kleine, geschlossene Räume bis ca. 1&nbsp;m³ — z.&nbsp;B. Schränke, Abfalleimer-Umgebung, WC, Growbox bis 60×60&nbsp;cm.</p>
+          <div class="callout reveal">
+            <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="8" height="10" rx="2"/><rect x="13" y="7" width="8" height="10" rx="2"/></svg>
+            <p data-i18n="dosis.multi"><strong>Für grössere Räume:</strong> verteile mehrere Säckchen (Multi-Sack-Strategie) statt ein grosses Produkt zu kaufen. So bleibt die Kontaktfläche pro Volumen hoch.</p>
+          </div>
+        </div>
+        <!-- Rechner -->
+        <div class="calc reveal" role="group" aria-labelledby="calc-title">
+          <h3 id="calc-title" data-i18n="dosis.calcTitle">Wie viele Säckchen braucht dein Raum?</h3>
+          <div class="calc-presets" role="group" aria-label="Vorlagen">
+            <button type="button" class="chip" data-preset="0.6,0.6,1.6"  data-i18n="dosis.presetGrow">Growbox 60×60</button>
+            <button type="button" class="chip" data-preset="0.5,0.5,2.0"  data-i18n="dosis.presetCab">Schrank</button>
+            <button type="button" class="chip" data-preset="1.0,1.0,2.5"  data-i18n="dosis.presetWc">WC</button>
+            <button type="button" class="chip" data-preset="0.4,0.4,0.8"  data-i18n="dosis.presetBin">Abfalleimer</button>
+          </div>
+          <div class="calc-inputs">
+            <label><span data-i18n="dosis.len">Länge</span><input id="calc-l" type="number" inputmode="decimal" min="0.1" max="30" step="0.1" value="0.6" data-i18n-ph="dosis.unit" placeholder="m"><span class="unit" aria-hidden="true">m</span></label>
+            <label><span data-i18n="dosis.wid">Breite</span><input id="calc-b" type="number" inputmode="decimal" min="0.1" max="30" step="0.1" value="0.6" data-i18n-ph="dosis.unit" placeholder="m"><span class="unit" aria-hidden="true">m</span></label>
+            <label><span data-i18n="dosis.hei">Höhe</span><input id="calc-h" type="number" inputmode="decimal" min="0.1" max="30" step="0.1" value="1.6" data-i18n-ph="dosis.unit" placeholder="m"><span class="unit" aria-hidden="true">m</span></label>
+          </div>
+          <p class="calc-volume"><span data-i18n="dosis.volume">Raumvolumen</span>: <strong id="calc-vol">0.58</strong> m³</p>
+          <div class="calc-result">
+            <div class="pouch-row" id="pouch-row" aria-hidden="true"></div>
+            <p class="calc-count" id="calc-count">1–2 <span data-i18n="dosis.pouches">Säckchen</span></p>
+            <p class="calc-hint" data-i18n="dosis.hint">Je höher die Geruchslast, desto eher am oberen Ende dosieren.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VENTILATOR ============ -->
+  <section class="section" id="ventilator">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="fan.eyebrow">Profi-Tipp</p>
+      <div class="split split-rev">
+        <div class="viz-card reveal" aria-label="Animation: Luftstrom durch eine Growbox">
+          <svg class="airflow-svg" viewBox="0 0 480 340" role="img">
+            <!-- Zelt -->
+            <path d="M70 60 L410 60 L410 300 L70 300 Z" fill="#E7E1D6" stroke="#948B7E" stroke-width="2.5"/>
+            <path d="M70 60 L410 60" stroke="#6B645A" stroke-width="3"/>
+            <!-- Ventilator -->
+            <g class="fan" transform="translate(120,180)">
+              <circle r="34" fill="#EFEAE0" stroke="#6B645A" stroke-width="2.5"/>
+              <g class="fan-blades">
+                <path d="M0 0 C10 -6 22 -4 26 2 C18 8 8 8 0 0 Z" fill="#6B645A"/>
+                <path d="M0 0 C10 -6 22 -4 26 2 C18 8 8 8 0 0 Z" fill="#6B645A" transform="rotate(120)"/>
+                <path d="M0 0 C10 -6 22 -4 26 2 C18 8 8 8 0 0 Z" fill="#6B645A" transform="rotate(240)"/>
+              </g>
+              <circle r="5" fill="#948B7E"/>
+            </g>
+            <!-- Säckchen im Luftstrom -->
+            <g transform="translate(255,150)">
+              <path d="M0 0 L52 0 L48 62 Q26 70 4 62 Z" fill="#948B7E"/>
+              <path d="M0 0 Q26 7 52 0" stroke="#6B645A" stroke-width="2" fill="none"/>
+              <line x1="26" y1="-14" x2="26" y2="0" stroke="#6B645A" stroke-width="2"/>
+            </g>
+            <!-- Luftstrom-Linien -->
+            <g class="air-streams" fill="none" stroke="#6B645A" stroke-width="2" stroke-dasharray="6 8" stroke-linecap="round">
+              <path class="stream" d="M160 180 C210 180 230 180 260 180"/>
+              <path class="stream" d="M160 150 C215 150 235 165 262 172" opacity=".6"/>
+              <path class="stream" d="M160 210 C215 210 235 195 262 188" opacity=".6"/>
+            </g>
+            <!-- wegfliegende Geruchspunkte nach der Kohle -->
+            <g fill="#D8FF3E">
+              <circle class="clean-dot" cx="330" cy="176" r="3"/>
+              <circle class="clean-dot" cx="356" cy="184" r="2.4"/>
+              <circle class="clean-dot" cx="382" cy="174" r="2"/>
+            </g>
+            <text x="84" y="330" class="svg-label" data-i18n="fan.svgFan">Ventilator</text>
+            <text x="240" y="252" class="svg-label" data-i18n="fan.svgPouch">Säckchen im Luftstrom</text>
+            <text x="300" y="90" class="svg-label" data-i18n="fan.svgOut">gereinigte Luft</text>
+          </svg>
+        </div>
+        <div class="reveal">
+          <h2 data-i18n="fan.title">Häng es in den Wind.</h2>
+          <p class="lead" data-i18n="fan.p1">In aktiven Räumen (z.&nbsp;B. Growbox mit Luftzirkulation) funktioniert das Säckchen am besten im Luftstrom: hänge es in den Weg des Ventilators. Die kontinuierliche Luftbewegung führt konstant neue Geruchsmoleküle an die Kohle — die Wirkung steigt deutlich gegenüber stillem Luftvolumen.</p>
+          <ul class="ticks reveal">
+            <li data-i18n="fan.li1">Direkt in den Luftweg hängen, nicht in der Ecke verstecken</li>
+            <li data-i18n="fan.li2">Kordelzug am Säckchen erlaubt einfaches Aufhängen</li>
+            <li data-i18n="fan.li3">Luftaustausch im Raum erhöht die Kontaktfläche weiter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PFLEGE ============ -->
+  <section class="section section-alt" id="pflege">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="care.eyebrow">Pflege &amp; Austausch</p>
+      <h2 class="reveal" data-i18n="care.title">Eine Kohle, viele Leben.</h2>
+      <p class="lead reveal" data-i18n="care.p1">Gut gepflegt hält das Säckchen deutlich länger als ein Wegwerfprodukt — und du merkst rechtzeitig, wann es Zeit wird.</p>
+      <ol class="steps">
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">01</span>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>
+          <h3 data-i18n="care.s1t">Luftdicht lagern</h3>
+          <p data-i18n="care.s1p">Säckchen vor Gebrauch luftdicht im Zip-Bag aufbewahren — <strong>erst vor Gebrauch öffnen.</strong></p>
+        </li>
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">02</span>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+          <h3 data-i18n="care.s2t">Alle 4–8 Wochen prüfen</h3>
+          <p data-i18n="care.s2p">Nach Wochen bis Monaten (je nach Geruchslast) ist die Oberfläche voll — bei starker Belastung regelmässig kontrollieren.</p>
+        </li>
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">03</span>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M4 10h16M8 6h.01M12 6h.01"/><circle cx="12" cy="16" r="3"/></svg>
+          <h3 data-i18n="care.s3t">Regenerieren: 120&nbsp;°C, 2–3&nbsp;h</h3>
+          <p data-i18n="care.s3p">Säckchen 2–3 Stunden bei 120&nbsp;°C im Ofen erhitzen — die gebundenen Moleküle werden freigesetzt, die Kohle wirkt wieder.</p>
+        </li>
+        <li class="step-card reveal">
+          <span class="step-num" aria-hidden="true">04</span>
+          <svg class="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 4v6h-6M1 20v-6h6M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></svg>
+          <h3 data-i18n="care.s4t">Oder ersetzen</h3>
+          <p data-i18n="care.s4p">Hat sich eine Fett- oder Feuchteschicht gebildet, ist die Regeneration begrenzt — dann ist Austausch die ehrliche Lösung.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ SICHERHEIT ============ -->
+  <section class="section section-safety" id="sicherheit">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="safety.eyebrow">Sicherheit</p>
+      <h2 class="reveal" data-i18n="safety.title">Unspektakulär. Absichtlich.</h2>
+      <div class="safety-grid reveal">
+        <div class="safety-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16.5h.01"/></svg>
+          <p data-i18n="safety.c1">Nicht zum Verzehr</p>
+        </div>
+        <div class="safety-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 10h.01M15 10h.01M9.5 15.5c1.5 1 3.5 1 5 0"/></svg>
+          <p data-i18n="safety.c2">Von Kindern &amp; Tieren fernhalten</p>
+        </div>
+        <div class="safety-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M7 8c0-2 2-3 5-3s5 1 5 3-2 3-5 3-5 1-5 3 2 3 5 3 5-1 5-3"/></svg>
+          <p data-i18n="safety.c3">Staub nicht einatmen</p>
+        </div>
+        <div class="safety-chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l9-5 9 5v13M9 21v-6h6v6"/></svg>
+          <p data-i18n="safety.c4">Nur in geschlossenen Räumen</p>
+        </div>
+      </div>
+      <p class="fine reveal" data-i18n="safety.note">Deklaration auf der Verpackung in Deutsch, Französisch und Italienisch. Keine Gesundheitsversprechen, keine Zusatzstoffe.</p>
+    </div>
+  </section>
+
+  <!-- ============ HÄNDLER ============ -->
+  <section class="section section-alt" id="haendler">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="dealer.eyebrow">Für Händler:innen</p>
+      <h2 class="reveal" data-i18n="dealer.title">Verkauf ohne Risiko.</h2>
+      <p class="lead reveal" data-i18n="dealer.p1">Du führst ein Growshop-, CBD- oder Kiosk-Sortiment? „no dank." läuft auf Kommission — du trägst nichts, wir tragen den Rest.</p>
+      <div class="dealer-grid">
+        <div class="dealer-card reveal">
+          <p class="dealer-num">0 CHF</p>
+          <h3 data-i18n="dealer.c1t">Kein Risiko</h3>
+          <p data-i18n="dealer.c1p">Rückkaufgarantie und Eigentumsvorbehalt — unverkaufte Ware gehört uns, nicht dir.</p>
+        </div>
+        <div class="dealer-card reveal">
+          <p class="dealer-num">40–50&nbsp;%</p>
+          <h3 data-i18n="dealer.c2t">Marge</h3>
+          <p data-i18n="dealer.c2p">Auf 5.90 CHF Retail bleiben dir bis zu 2.10 CHF pro Stück — bei ca. 0.35 CHF Wareneinsatz.</p>
+        </div>
+        <div class="dealer-card reveal">
+          <p class="dealer-num">1×</p>
+          <h3 data-i18n="dealer.c3t">Display mit QR</h3>
+          <p data-i18n="dealer.c3p">Verkaufsfertiges Display — direkt an die Kasse stellen, Kund:innen scannen, verstehen, kaufen.</p>
+        </div>
+        <div class="dealer-card reveal">
+          <p class="dealer-num">30&nbsp;T</p>
+          <h3 data-i18n="dealer.c4t">Monatsabrechnung</h3>
+          <p data-i18n="dealer.c4p">Einmal im Monat abrechnen, Probemaster zum Kennenlernen inklusive.</p>
+        </div>
+      </div>
+      <div class="dealer-cta reveal">
+        <!-- TODO(DECISION: E-Mail) — echte Adresse einsetzen, sobald Provider steht -->
+        <a class="btn btn-primary btn-lime" href="mailto:kontakt@nodank.ch?subject=Probemuster%20%2B%20Display" data-i18n="dealer.cta">Probemuster + Display anfragen</a>
+        <p class="fine" data-i18n="dealer.ctaNote">Antwort innert 48 Stunden. Kein Abo, kein Mindestbestand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOPS ============ -->
+  <section class="section" id="shops">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="shops.eyebrow">Wo erhältlich?</p>
+      <h2 class="reveal" data-i18n="shops.title">Bald in deinem Shop.</h2>
+      <!-- TODO(DECISION: Shop-Liste) — Händlerliste ergänzen, sobald erste Verhandlungen stehen -->
+      <div class="shop-grid reveal">
+        <figure class="shop-photo">
+          <img src="assets/product-front-wordmark.png" width="285" height="245" alt="„no dank." Säckchen mit Wortmarke (Produktbild)">
+        </figure>
+        <div class="shop-empty">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18M16 10a4 4 0 0 1-8 0"/></svg>
+          <p data-i18n="shops.p1">„no dank." gibt es in ausgewählten Shops — die Liste wächst gerade. <a href="#haendler" data-i18n="shops.link">Dein Shop führt es noch nicht? Hier mitmachen.</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT / IMPRESSUM ============ -->
+  <section class="section section-alt" id="kontakt">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-i18n="legal.eyebrow">Kontakt &amp; Impressum</p>
+      <div class="legal-grid">
+        <div class="legal-block reveal">
+          <h2 data-i18n="legal.title">Impressum</h2>
+          <!-- TODO(DECISION: Inverkehrbringer-Adresse) — Platzhalter durch echte Adresse ersetzen (UWG-Pflicht) -->
+          <address class="placeholder-block">
+            [Name Vorname / Einzelfirma]<br>
+            [Strasse Nr]<br>
+            [PLZ Ort, Schweiz]<br>
+            <a href="mailto:kontakt@nodank.ch">kontakt@nodank.ch</a>
+          </address>
+          <span class="placeholder-badge" data-i18n="legal.badge">Platzhalter — Adresse folgt</span>
+          <p class="fine" data-i18n="legal.note">Einzelunternehmen ohne Handelsregister-Eintrag.</p>
+        </div>
+        <div class="legal-block reveal">
+          <h2 data-i18n="legal.title2">Kontakt</h2>
+          <p data-i18n="legal.p1">Fragen zum Produkt, zur Dosierung oder zur Händler-Kommission — schreib uns:</p>
+          <a class="btn btn-ghost" href="mailto:kontakt@nodank.ch" data-i18n="legal.cta">kontakt@nodank.ch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <img src="assets/logo.svg" alt="no dank." width="206" height="38">
+    <p data-i18n="footer.line">© 2026 „no dank." — Gerüche. Einfach weg. · nodank.ch</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
