@@ -276,5 +276,12 @@
     initCalc();
     initReveals();
     initHeader();
+    /* Reduzierte Bewegung: Animationen durch Standbilder ersetzen */
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      var ha = document.querySelector(".hero-anim");
+      if (ha) ha.src = "assets/anim-waves-poster.jpg";
+      var pv = document.querySelector(".pore-anim");
+      if (pv) pv.src = "assets/anim-pore-poster.jpg";
+    }
   });
 })();

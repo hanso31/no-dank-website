@@ -52,6 +52,7 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
+    <img class="hero-anim" src="assets/anim-waves.webp" alt="" aria-hidden="true">
     <div class="wrap hero-grid">
       <div class="hero-copy reveal">
         <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Aktivkohle-Geruchsfilter · 50 g · Kokosschalen</span></p>
@@ -79,7 +80,8 @@
   </section>
 
   <!-- ============ WIRKUNG ============ -->
-  <section class="section" id="wirkung">
+  <section class="section section-lime" id="wirkung">
+
     <div class="wrap">
       <p class="eyebrow reveal" data-i18n="wirkung.eyebrow">Wie es funktioniert</p>
       <div class="split">
@@ -92,17 +94,8 @@
           </div>
         </div>
         <div class="viz-card reveal" aria-label="Animation: Geruchsmoleküle werden von Aktivkohle gebunden">
-          <div class="explainer-wrap">
-            <canvas id="explain-canvas" role="img" aria-label="Erklär-Animation: Geruchsmoleküle werden von Aktivkohle gebunden" data-i18n-aria="wirkung.simAria"></canvas>
-            <div class="expl-captions">
-              <p class="on"><span class="expl-step" style="--sc:#9DB222">1</span><span data-i18n="wirkung.step1">Gerüche steigen auf.</span></p>
-              <p><span class="expl-step" style="--sc:#E8A020">2</span><span data-i18n="wirkung.step2">Die Aktivkohle zieht sie an.</span></p>
-              <p><span class="expl-step" style="--sc:#F0731C">3</span><span data-i18n="wirkung.step3">Gebunden — dauerhaft, ohne Duftstoffe.</span></p>
-              <p><span class="expl-step" style="--sc:#6B645A">4</span><span data-i18n="wirkung.step4">Übrig bleibt frische Luft.</span></p>
-            </div>
-            <div class="expl-progress"><span id="expl-fill"></span></div>
-          </div>
-          <p class="viz-caption reveal" data-i18n="wirkung.caption">So bindet die Kohle: Moleküle steigen auf, werden angezogen und haften in den Poren — dauerhaft, ohne Duftstoffe.</p>
+          <img class="pore-anim" src="assets/anim-pore.webp" alt="Erklär-Animation: Zoom vom Raum ins Säckchen, in die Poren — Moleküle werden gebunden" loading="lazy">
+          <p class="viz-caption reveal" data-i18n="wirkung.caption">Vom Raum bis in die Pore: Die Kohle bindet die Moleküle — dauerhaft, ohne Duftstoffe.</p>
         </div>
       </div>
       <!-- Tennisplatz-Vergleich -->
@@ -370,6 +363,5 @@
 </footer>
 
 <script src="app.js"></script>
-<script src="explainer.js"></script>
 </body>
 </html>
