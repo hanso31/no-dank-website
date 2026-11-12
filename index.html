@@ -92,55 +92,30 @@
           </div>
         </div>
         <div class="viz-card reveal" aria-label="Animation: Geruchsmoleküle werden von Aktivkohle gebunden">
-          <svg class="adsorption-svg" viewBox="0 0 480 400" role="img">
-            <defs>
-              <clipPath id="granuleZone"><rect x="0" y="250" width="480" height="150"/></clipPath>
-            </defs>
-            <!-- Geruchsmoleküle (werden adsorbiert) -->
-            <g class="molecules">
-              <circle class="mol" style="--x:40;  --d:0s;    --t:7s"   cx="40"  cy="20" r="7"   fill="#D8FF3E"/>
-              <circle class="mol" style="--x:95;  --d:-1.4s; --t:8s"   cx="95"  cy="10" r="5.5" fill="#D8FF3E"/>
-              <circle class="mol" style="--x:150; --d:-3s;   --t:7.5s" cx="150" cy="24" r="8"   fill="#D8FF3E"/>
-              <circle class="mol" style="--x:205; --d:-2.2s; --t:6.8s" cx="205" cy="8"  r="5"   fill="#D8FF3E"/>
-              <circle class="mol" style="--x:260; --d:-4.5s; --t:8.4s" cx="260" cy="18" r="6.5" fill="#D8FF3E"/>
-              <circle class="mol" style="--x:318; --d:-1s;   --t:7.2s" cx="318" cy="12" r="5.5" fill="#D8FF3E"/>
-              <circle class="mol" style="--x:372; --d:-5.5s; --t:7.8s" cx="372" cy="22" r="7.5" fill="#D8FF3E"/>
-              <circle class="mol" style="--x:428; --d:-3.6s; --t:6.5s" cx="428" cy="14" r="5"   fill="#D8FF3E"/>
-            </g>
-            <!-- Granulatschicht -->
-            <g clip-path="url(#granuleZone)">
-              <rect x="0" y="252" width="480" height="148" fill="#E7E1D6"/>
-              <g class="granules" fill="#948B7E">
-                <circle cx="18"  cy="268" r="14"/><circle cx="55"  cy="262" r="11"/><circle cx="88" cy="272" r="15"/>
-                <circle cx="126" cy="264" r="12"/><circle cx="160" cy="274" r="15"/><circle cx="200" cy="263" r="11"/>
-                <circle cx="236" cy="272" r="14"/><circle cx="272" cy="264" r="12"/><circle cx="308" cy="274" r="15"/>
-                <circle cx="346" cy="263" r="11"/><circle cx="382" cy="272" r="14"/><circle cx="420" cy="264" r="12"/>
-                <circle cx="455" cy="273" r="14"/><circle cx="36"  cy="292" r="15"/><circle cx="76" cy="300" r="13"/>
-                <circle cx="114" cy="292" r="15"/><circle cx="154" cy="302" r="13"/><circle cx="194" cy="293" r="15"/>
-                <circle cx="234" cy="302" r="13"/><circle cx="274" cy="293" r="15"/><circle cx="314" cy="302" r="13"/>
-                <circle cx="354" cy="293" r="15"/><circle cx="394" cy="302" r="13"/><circle cx="434" cy="293" r="15"/>
-                <circle cx="468" cy="301" r="13"/>
-              </g>
-              <g class="granules-dark" fill="#6B645A">
-                <circle cx="18" cy="334" r="16"/><circle cx="62" cy="342" r="14"/><circle cx="108" cy="334" r="16"/>
-                <circle cx="154" cy="343" r="14"/><circle cx="200" cy="334" r="16"/><circle cx="246" cy="343" r="14"/>
-                <circle cx="292" cy="334" r="16"/><circle cx="338" cy="343" r="14"/><circle cx="384" cy="334" r="16"/>
-                <circle cx="430" cy="343" r="14"/><circle cx="470" cy="336" r="15"/><circle cx="40" cy="376" r="18"/>
-                <circle cx="96" cy="384" r="16"/><circle cx="152" cy="375" r="18"/><circle cx="208" cy="384" r="16"/>
-                <circle cx="264" cy="375" r="18"/><circle cx="320" cy="384" r="16"/><circle cx="376" cy="375" r="18"/>
-                <circle cx="432" cy="384" r="16"/><circle cx="478" cy="376" r="17"/>
-              </g>
-              <!-- haftende Moleküle an der Oberfläche -->
-              <g fill="#D8FF3E">
-                <circle class="stuck" cx="70"  cy="255" r="4"/><circle class="stuck" cx="180" cy="258" r="4"/>
-                <circle class="stuck" cx="290" cy="255" r="4"/><circle class="stuck" cx="395" cy="258" r="4"/>
-              </g>
-            </g>
-            <path d="M0 252 H480" stroke="#6B645A" stroke-width="1.5" opacity=".3"/>
-            <text x="16" y="34" class="svg-label" data-i18n="wirkung.svgOdors">Geruchsmoleküle</text>
-            <text x="16" y="242" class="svg-label" data-i18n="wirkung.svgCarbon">Aktivkohle-Granulat</text>
-          </svg>
-          <p class="viz-caption reveal" data-i18n="wirkung.caption">Adsorption: Moleküle haften an der inneren Oberfläche der Kohle — dauerhaft, ohne Duftstoffe.</p>
+          <div class="sim-wrap">
+            <canvas id="adsorption-canvas" role="img" aria-label="Animation: Geruchsmoleküle werden von Aktivkohle gebunden" data-i18n-aria="wirkung.simAria"></canvas>
+            <div class="sim-hud">
+              <div class="sim-top">
+                <span class="sim-label" data-i18n="wirkung.svgOdors">Geruchsmoleküle</span>
+                <button type="button" class="sim-btn" id="sim-burst" data-i18n="wirkung.simBurst">Geruch freisetzen</button>
+                <button type="button" class="sim-btn ghost" id="sim-zoom"><span data-i18n="wirkung.simZoom">Kohle vergrössern</span><span data-i18n="wirkung.simUnzoom" hidden>Gesamtansicht</span></button>
+              </div>
+              <div class="sim-bottom">
+                <div class="sim-meter">
+                  <span class="sim-label carbon" data-i18n="wirkung.svgCarbon">Aktivkohle-Granulat</span>
+                  <span class="sim-meter-label" data-i18n="wirkung.simSat">Sättigung</span>
+                  <span class="sim-meter-track"><span class="sim-meter-fill" id="sim-fill"></span></span>
+                  <span class="sim-meter-pct" id="sim-pct">0%</span>
+                </div>
+                <div class="sim-status">
+                  <p class="on" id="sim-status-abs" data-i18n="wirkung.simStatusAbs">Die Kohle bindet die Gerüche — tippe in die Szene für mehr.</p>
+                  <p id="sim-status-full" data-i18n="wirkung.simStatusFull">Oberfläche voll — wie nach Wochen im Einsatz.</p>
+                  <p id="sim-status-regen" data-i18n="wirkung.simStatusRegen">Regeneration: Hitze gibt die Moleküle frei. (Siehe «Pflege»)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="viz-caption reveal" data-i18n="wirkung.caption">Live-Simulation — tippe in die Szene und sieh zu, wie die Kohle jeden Geruch schluckt. Ist die Oberfläche voll, folgt die Regeneration.</p>
         </div>
       </div>
       <!-- Tennisplatz-Vergleich -->
@@ -408,5 +383,6 @@
 </footer>
 
 <script src="app.js"></script>
+<script src="sim.js"></script>
 </body>
 </html>

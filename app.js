@@ -27,7 +27,15 @@
     "wirkung.diff": "<strong>The difference from air fresheners:</strong> sprays add a new smell. Activated carbon removes the old one.",
     "wirkung.svgOdors": "Odor molecules",
     "wirkung.svgCarbon": "Activated carbon granulate",
-    "wirkung.caption": "Adsorption: molecules adhere to the inner surface of the carbon — permanently, without fragrances.",
+    "wirkung.simAria": "Animation: odor molecules being bound by activated carbon",
+    "wirkung.simBurst": "Release odor",
+    "wirkung.simZoom": "Magnify carbon",
+    "wirkung.simUnzoom": "Full view",
+    "wirkung.simSat": "Saturation",
+    "wirkung.simStatusAbs": "The carbon is binding the odors — tap the scene for more.",
+    "wirkung.simStatusFull": "Surface full — like after weeks of use.",
+    "wirkung.simStatusRegen": "Regeneration: heat releases the molecules. (See “Care”.)",
+    "wirkung.caption": "Live simulation — tap the scene and watch the carbon swallow every odor. Once the surface is full, regeneration follows.",
     "wirkung.compare1": "activated carbon — tiny, unremarkable",
     "wirkung.compare2": "of internal surface area, binding odors",
     "wirkung.compareNum1": "1 g",
@@ -129,6 +137,9 @@
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
       DE["ph:" + el.getAttribute("data-i18n-ph")] = el.getAttribute("placeholder") || "";
     });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      DE[el.getAttribute("data-i18n-aria")] = el.getAttribute("aria-label") || "";
+    });
   }
 
   function applyLang(lang) {
@@ -141,6 +152,10 @@
     document.querySelectorAll("[data-i18n-ph]").forEach(function (el) {
       var v = dict["ph:" + el.getAttribute("data-i18n-ph")];
       if (v !== undefined) el.setAttribute("placeholder", v);
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
+      var v = dict[el.getAttribute("data-i18n-aria")];
+      if (v !== undefined) el.setAttribute("aria-label", v);
     });
     document.documentElement.setAttribute("lang", lang);
     document.title = META[lang].title;
