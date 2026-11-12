@@ -32,7 +32,12 @@
     "wirkung.step2": "Activated carbon attracts them.",
     "wirkung.step3": "Bound — permanently, no fragrances.",
     "wirkung.step4": "What's left: fresh air.",
-    "wirkung.caption": "How the carbon binds: molecules rise, get attracted and stick in the pores — permanently, without fragrances.",
+    "wirkung.caption": "Five frames, one principle: odor goes in — nothing comes out.",
+    "car.1": "Some rooms just smell.",
+    "car.2": "1 g of carbon = 1,500 m² of surface. This pouch holds 50 g.",
+    "car.3": "The fabric is just the suit — the work starts beneath the surface.",
+    "car.4": "Molecule by molecule wanders into the pores — and stays. No fragrances, no masking.",
+    "car.5": "What's left: nothing. That's exactly the point.",
     "wirkung.compare1": "activated carbon — tiny, unremarkable",
     "wirkung.compare2": "of internal surface area, binding odors",
     "wirkung.compareNum1": "1 g",
@@ -269,6 +274,39 @@
     onScroll();
   }
 
+  /* ---------- Bilderkarussell ---------- */
+  function initCarousel() {
+    var root = document.getElementById("pore-carousel");
+    if (!root) return;
+    var track = root.querySelector(".car-track");
+    var slides = root.querySelectorAll(".car-slide");
+    var dotsBox = root.querySelector(".car-dots");
+    var n = slides.length, i = 0, timer = null;
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var dots = [];
+    for (var k = 0; k < n; k++) {
+      var b = document.createElement("button");
+      b.type = "button"; b.setAttribute("aria-label", "Slide " + (k + 1));
+      (function (k) { b.addEventListener("click", function () { go(k); restart(); }); })(k);
+      dotsBox.appendChild(b); dots.push(b);
+    }
+    function go(k) {
+      i = (k + n) % n;
+      track.style.transform = "translateX(-" + (i * 100) + "%)";
+      for (var j = 0; j < n; j++) dots[j].classList.toggle("on", j === i);
+    }
+    function next() { go(i + 1); }
+    function restart() {
+      if (timer) { clearInterval(timer); timer = null; }
+      if (!reduced) timer = setInterval(next, 4500);
+    }
+    root.querySelector(".car-btn.next").addEventListener("click", function () { next(); restart(); });
+    root.querySelector(".car-btn.prev").addEventListener("click", function () { go(i - 1); restart(); });
+    root.addEventListener("pointerenter", function () { if (timer) { clearInterval(timer); timer = null; } });
+    root.addEventListener("pointerleave", restart);
+    go(0); restart();
+  }
+
   /* ---------- Start ---------- */
   document.addEventListener("DOMContentLoaded", function () {
     captureDE();
@@ -276,12 +314,11 @@
     initCalc();
     initReveals();
     initHeader();
-    /* Reduzierte Bewegung: Animationen durch Standbilder ersetzen */
+    initCarousel();
+    /* Reduzierte Bewegung: Hero-Animation durch Standbild ersetzen */
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       var ha = document.querySelector(".hero-anim");
       if (ha) ha.src = "assets/anim-waves-poster.jpg";
-      var pv = document.querySelector(".pore-anim");
-      if (pv) pv.src = "assets/anim-pore-poster.jpg";
     }
   });
 })();

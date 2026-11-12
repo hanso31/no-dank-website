@@ -110,7 +110,16 @@ def frame_waves(t, surface):
 
     # Partikel reiten auf Welle 1 und werden herausgefischt
     pouch_x, pouch_y = 640, 512
-    pouch(ctx, pouch_x, pouch_y, 1.0)
+    # Beutel-Animation: Schweben (3 Zyklen/Loop), Drehung (5/Loop), Atmen (8/Loop)
+    bob = 8*math.sin(2*math.pi*t/5.0)
+    rot = math.radians(1.6)*math.sin(2*math.pi*t/3.0)
+    breath = 1 + 0.045*math.sin(2*math.pi*t/1.875)
+    ctx.save()
+    ctx.translate(pouch_x, pouch_y + bob)
+    ctx.rotate(rot)
+    ctx.scale(breath, breath)
+    pouch(ctx, 0, 0, 1.0)
+    ctx.restore()
     k, sp = 0.012, 2.1*math.pi/DUR*4
     for i in range(26):
         x0 = i*53.0
@@ -120,10 +129,10 @@ def frame_waves(t, surface):
         if 4.0 < t < 10.2 and abs(x - pouch_x) < 240:
             p = ease(seg(t, hit_t, hit_t+1.3))
             if p >= 1:
-                glow_dot(ctx, pouch_x-30+(i*13) % 60, pouch_y-40-(i*17) % 50, 3.2, lc(KOHLE, LIME, q), 0.9)
+                glow_dot(ctx, pouch_x-30+(i*13) % 60, pouch_y-40-(i*17) % 50 + bob, 3.2, lc(KOHLE, LIME, q), 0.9)
                 continue
             tx = pouch_x + ((i*29) % 70) - 35
-            ty = pouch_y - 60 - ((i*31) % 60)
+            ty = pouch_y - 60 - ((i*31) % 60) + bob
             px = lerp(x, tx, p); py = lerp(wy, ty, p) - 60*math.sin(p*math.pi)
             glow_dot(ctx, px, py, lerp(6.5, 3.2, p), lc(KOHLE, LIME, p*max(q, 0.35)), 1-p*0.15)
         else:
