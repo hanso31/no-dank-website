@@ -55,7 +55,7 @@
     <div class="wrap hero-grid">
       <div class="hero-copy reveal">
         <p class="kicker"><span class="kicker-dot" aria-hidden="true"></span><span data-i18n="hero.kicker">Aktivkohle-Geruchsfilter · 50 g · Kokosschalen</span></p>
-        <h1 data-i18n="hero.title">Gerüche.<br>Einfach <span class="lime-dot-end">weg</span>.</h1>
+        <h1 data-i18n="hero.title">Gerüche.<br>Einfach <span class="hl-lime">weg</span>.</h1>
         <p class="hero-sub" data-i18n="hero.sub">„no dank." ist ein Säckchen mit 50&nbsp;g Aktivkohle-Granulat aus Kokosschalen. Es bindet Gerüche in geschlossenen Räumen — nicht durch Parfüm, sondern durch Physik.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#wirkung" data-i18n="hero.cta">So funktioniert's</a>
@@ -92,30 +92,17 @@
           </div>
         </div>
         <div class="viz-card reveal" aria-label="Animation: Geruchsmoleküle werden von Aktivkohle gebunden">
-          <div class="sim-wrap">
-            <canvas id="adsorption-canvas" role="img" aria-label="Animation: Geruchsmoleküle werden von Aktivkohle gebunden" data-i18n-aria="wirkung.simAria"></canvas>
-            <div class="sim-hud">
-              <div class="sim-top">
-                <span class="sim-label" data-i18n="wirkung.svgOdors">Geruchsmoleküle</span>
-                <button type="button" class="sim-btn" id="sim-burst" data-i18n="wirkung.simBurst">Geruch freisetzen</button>
-                <button type="button" class="sim-btn ghost" id="sim-zoom"><span data-i18n="wirkung.simZoom">Kohle vergrössern</span><span data-i18n="wirkung.simUnzoom" hidden>Gesamtansicht</span></button>
-              </div>
-              <div class="sim-bottom">
-                <div class="sim-meter">
-                  <span class="sim-label carbon" data-i18n="wirkung.svgCarbon">Aktivkohle-Granulat</span>
-                  <span class="sim-meter-label" data-i18n="wirkung.simSat">Sättigung</span>
-                  <span class="sim-meter-track"><span class="sim-meter-fill" id="sim-fill"></span></span>
-                  <span class="sim-meter-pct" id="sim-pct">0%</span>
-                </div>
-                <div class="sim-status">
-                  <p class="on" id="sim-status-abs" data-i18n="wirkung.simStatusAbs">Die Kohle bindet die Gerüche — tippe in die Szene für mehr.</p>
-                  <p id="sim-status-full" data-i18n="wirkung.simStatusFull">Oberfläche voll — wie nach Wochen im Einsatz.</p>
-                  <p id="sim-status-regen" data-i18n="wirkung.simStatusRegen">Regeneration: Hitze gibt die Moleküle frei. (Siehe «Pflege»)</p>
-                </div>
-              </div>
+          <div class="explainer-wrap">
+            <canvas id="explain-canvas" role="img" aria-label="Erklär-Animation: Geruchsmoleküle werden von Aktivkohle gebunden" data-i18n-aria="wirkung.simAria"></canvas>
+            <div class="expl-captions">
+              <p class="on"><span class="expl-step" style="--sc:#9DB222">1</span><span data-i18n="wirkung.step1">Gerüche steigen auf.</span></p>
+              <p><span class="expl-step" style="--sc:#E8A020">2</span><span data-i18n="wirkung.step2">Die Aktivkohle zieht sie an.</span></p>
+              <p><span class="expl-step" style="--sc:#F0731C">3</span><span data-i18n="wirkung.step3">Gebunden — dauerhaft, ohne Duftstoffe.</span></p>
+              <p><span class="expl-step" style="--sc:#6B645A">4</span><span data-i18n="wirkung.step4">Übrig bleibt frische Luft.</span></p>
             </div>
+            <div class="expl-progress"><span id="expl-fill"></span></div>
           </div>
-          <p class="viz-caption reveal" data-i18n="wirkung.caption">Live-Simulation — tippe in die Szene und sieh zu, wie die Kohle jeden Geruch schluckt. Ist die Oberfläche voll, folgt die Regeneration.</p>
+          <p class="viz-caption reveal" data-i18n="wirkung.caption">So bindet die Kohle: Moleküle steigen auf, werden angezogen und haften in den Poren — dauerhaft, ohne Duftstoffe.</p>
         </div>
       </div>
       <!-- Tennisplatz-Vergleich -->
@@ -138,13 +125,13 @@
   </section>
 
   <!-- ============ DOSIERUNG ============ -->
-  <section class="section section-alt" id="dosierung">
+  <section class="section section-sand" id="dosierung">
     <div class="wrap">
       <p class="eyebrow reveal" data-i18n="dosis.eyebrow">Dosierung</p>
       <div class="split">
         <div class="reveal">
           <h2 data-i18n="dosis.title">Die Faustregel: 50–100&nbsp;g pro m³.</h2>
-          <p class="lead" data-i18n="dosis.p1">Ein Säckchen (50&nbsp;g) ist ideal für kleine, geschlossene Räume bis ca. 1&nbsp;m³ — z.&nbsp;B. Schränke, Abfalleimer-Umgebung, WC, Growbox bis 60×60&nbsp;cm.</p>
+          <p class="lead" data-i18n="dosis.p1">Ein Säckchen (50&nbsp;g) ist ideal für kleine, geschlossene Räume bis ca. 1&nbsp;m³ — z.&nbsp;B. Schränke, Abfalleimer-Umgebung, WC — oder das Zimmer, in dem deine Tomaten überwintern.</p>
           <div class="callout reveal">
             <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="8" height="10" rx="2"/><rect x="13" y="7" width="8" height="10" rx="2"/></svg>
             <p data-i18n="dosis.multi"><strong>Für grössere Räume:</strong> verteile mehrere Säckchen (Multi-Sack-Strategie) statt ein grosses Produkt zu kaufen. So bleibt die Kontaktfläche pro Volumen hoch.</p>
@@ -154,7 +141,7 @@
         <div class="calc reveal" role="group" aria-labelledby="calc-title">
           <h3 id="calc-title" data-i18n="dosis.calcTitle">Wie viele Säckchen braucht dein Raum?</h3>
           <div class="calc-presets" role="group" aria-label="Vorlagen">
-            <button type="button" class="chip" data-preset="0.6,0.6,1.6"  data-i18n="dosis.presetGrow">Growbox 60×60</button>
+            <button type="button" class="chip" data-preset="0.6,0.6,1.6"  data-i18n="dosis.presetGrow">Kräutergarten 60×60</button>
             <button type="button" class="chip" data-preset="0.5,0.5,2.0"  data-i18n="dosis.presetCab">Schrank</button>
             <button type="button" class="chip" data-preset="1.0,1.0,2.5"  data-i18n="dosis.presetWc">WC</button>
             <button type="button" class="chip" data-preset="0.4,0.4,0.8"  data-i18n="dosis.presetBin">Abfalleimer</button>
@@ -180,7 +167,7 @@
     <div class="wrap">
       <p class="eyebrow reveal" data-i18n="fan.eyebrow">Profi-Tipp</p>
       <div class="split split-rev">
-        <div class="viz-card reveal" aria-label="Animation: Luftstrom durch eine Growbox">
+        <div class="viz-card reveal" aria-label="Animation: Luftstrom in einem belüfteten Schrank">
           <svg class="airflow-svg" viewBox="0 0 480 340" role="img">
             <!-- Zelt -->
             <path d="M70 60 L410 60 L410 300 L70 300 Z" fill="#E7E1D6" stroke="#948B7E" stroke-width="2.5"/>
@@ -220,7 +207,7 @@
         </div>
         <div class="reveal">
           <h2 data-i18n="fan.title">Häng es in den Wind.</h2>
-          <p class="lead" data-i18n="fan.p1">In aktiven Räumen (z.&nbsp;B. Growbox mit Luftzirkulation) funktioniert das Säckchen am besten im Luftstrom: hänge es in den Weg des Ventilators. Die kontinuierliche Luftbewegung führt konstant neue Geruchsmoleküle an die Kohle — die Wirkung steigt deutlich gegenüber stillem Luftvolumen.</p>
+          <p class="lead" data-i18n="fan.p1">In Räumen mit Luftumwälzung — etwa dort, wo dein Grünzeug nachts besonders fleissig gedeiht — funktioniert das Säckchen am besten im Luftstrom: hänge es in den Weg des Ventilators. Die kontinuierliche Luftbewegung führt konstant neue Geruchsmoleküle an die Kohle — die Wirkung steigt deutlich gegenüber stillem Luftvolumen.</p>
           <ul class="ticks reveal">
             <li data-i18n="fan.li1">Direkt in den Luftweg hängen, nicht in der Ecke verstecken</li>
             <li data-i18n="fan.li2">Kordelzug am Säckchen erlaubt einfaches Aufhängen</li>
@@ -232,7 +219,7 @@
   </section>
 
   <!-- ============ PFLEGE ============ -->
-  <section class="section section-alt" id="pflege">
+  <section class="section section-lime" id="pflege">
     <div class="wrap">
       <p class="eyebrow reveal" data-i18n="care.eyebrow">Pflege &amp; Austausch</p>
       <h2 class="reveal" data-i18n="care.title">Eine Kohle, viele Leben.</h2>
@@ -298,7 +285,7 @@
     <div class="wrap">
       <p class="eyebrow reveal" data-i18n="dealer.eyebrow">Für Händler:innen</p>
       <h2 class="reveal" data-i18n="dealer.title">Verkauf ohne Risiko.</h2>
-      <p class="lead reveal" data-i18n="dealer.p1">Du führst ein Growshop-, CBD- oder Kiosk-Sortiment? „no dank." läuft auf Kommission — du trägst nichts, wir tragen den Rest.</p>
+      <p class="lead reveal" data-i18n="dealer.p1">Du führst ein Sortiment für Pflanzen-Liebhaber mit hohen Ansprüchen, CBD-Produkte oder einen Kiosk? „no dank." läuft auf Kommission — du trägst nichts, wir tragen den Rest.</p>
       <div class="dealer-grid">
         <div class="dealer-card reveal">
           <p class="dealer-num">0 CHF</p>
@@ -383,6 +370,6 @@
 </footer>
 
 <script src="app.js"></script>
-<script src="sim.js"></script>
+<script src="explainer.js"></script>
 </body>
 </html>
