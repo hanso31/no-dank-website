@@ -1,12 +1,12 @@
 /* ==========================================================================
-   no dank. — styles.css
+   NO STANK. — styles.css
    Farbpalette siehe COLORS.md / :root unten
    ========================================================================== */
 
 :root {
-  /* Marke (aus brand/tokens.css) */
-  --rauch:   #6B645A;  /* Wortmarke "no", Sekundärtext, Icons */
-  --stein:   #948B7E;  /* Wortmarke "dank", dezente Elemente */
+  /* Marke */
+  --rauch:   #6B645A;  /* Wortmarke, Sekundärtext, Icons */
+  --stein:   #948B7E;  /* Dezente Elemente */
   --lime:    #D8FF3E;  /* Akzent ~5 %: Gestankpunkte, Highlights */
   --papier:  #EFEAE0;  /* Seitenhintergrund */
 

@@ -1,17 +1,17 @@
-# no dank. — Farbpalette (final, Website nodank.ch)
+# NO STANK. — Farbpalette (final, Website nostank.ch)
 
-Stand: 2026-11-12 · Verwendet in `styles.css` (`:root`-Tokens), `explainer.js` und allen Assets.
-Das Logo (`assets/logo.svg`, `assets/icon.svg`) verwendet ausschliesslich die
-Markenfarben 1–4 (der Logo-Punkt erhielt zur Kontrastsicherung auf hellen
-Flächen einen dünnen Rauch-Rand). 5–11 sind Website-/Illustrations-Erweiterungen.
+Stand: 2026-11-15 · Verwendet in `styles.css` (`:root`-Tokens) und allen Assets.
+Die verbindlichen Originallogos liegen im NO-STANK.-Projektpaket unter `brand/`.
+Die Website-Markenassets werden erst bei der separaten Asset-Umstellung ersetzt.
+5–11 sind Website-/Illustrations-Erweiterungen.
 
 ## Markenfarben (Original, unverändert)
 
 | # | Name   | Hex       | Verwendung                                                  |
 |---|--------|-----------|-------------------------------------------------------------|
-| 1 | Rauch  | `#6B645A` | Wortmarke „no", Sekundärtext, Icons, Illustrationslinien    |
-| 2 | Stein  | `#948B7E` | Wortmarke „dank", dezente Flächen, Granulat, Säckchen       |
-| 3 | Lime   | `#D8FF3E` | Hauptakzent: Gestankpunkte, CTAs, Marker, Kicker, Grafik    |
+| 1 | Rauch  | `#6B645A` | Wortmarke und Icon, Sekundärtext, Illustrationslinien        |
+| 2 | Stein  | `#948B7E` | Dezente Flächen, Granulat, Säckchen                         |
+| 3 | Lime   | `#D8FF3E` | Drei Punkte im Icon, CTAs, Marker, Kicker, Grafik           |
 | 4 | Papier | `#EFEAE0` | Grund-Hintergrund                                           |
 
 ## Erweiterungen Zitrus-Ramp & Flächen (Website + Illustration)
@@ -40,8 +40,8 @@ Flächen einen dünnen Rauch-Rand). 5–11 sind Website-/Illustrations-Erweiteru
   Der Übergang signalisiert «frisch wird es, wenn die Kohle arbeitet».
 - Lime, Gold, Orange nie als grossflächiger Text-Hintergrund unter kleiner Schrift;
   für farbige Zahlen/Badges die textfesten Varianten 9–11 verwenden.
-- Logo-Punkt und kleine Lime-Grafiken auf hell: mit Rauch-Rand (`#6B645A`, ca. 25–30 % Radius)
-  für Kontrast — siehe `assets/logo.svg`.
+- Icon und Wortmarke ausschliesslich aus den Originaldateien verwenden; weder umfärben,
+  umzeichnen noch zusätzliche Konturen ergänzen.
 - Dunkle Sektionen (Sicherheit) mit Zitrus-Gradient-Kante; Icons in Lime.
 - Kein Grün im botanischen Sinn, kein Hanf-Blatt, kein Rauch — Stimmung: wissenschaftlich,
   aber warm und farbig.

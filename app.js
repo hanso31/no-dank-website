@@ -1,5 +1,5 @@
 /* ==========================================================================
-   no dank. — app.js
+   NO STANK. — app.js
    Sprachumschaltung DE/EN, Dosierungsrechner, Scroll-Reveals
    ========================================================================== */
 (function () {
@@ -17,7 +17,7 @@
 
     "hero.kicker": "Activated-carbon odor filter · 50 g · coconut shells",
     "hero.title": 'Odors.<br>Simply <span class="hl-lime">gone</span>.',
-    "hero.sub": "„no dank.” is a small pouch with 50&nbsp;g of coconut-shell activated carbon granulate. It binds odors in enclosed spaces — not with perfume, but with physics.",
+    "hero.sub": "„NO STANK.” is a small pouch with 50&nbsp;g of coconut-shell activated carbon granulate. It binds odors in enclosed spaces — not with perfume, but with physics.",
     "hero.cta": "How it works",
     "hero.cta2": "Calculate your dosing",
 
@@ -92,7 +92,7 @@
 
     "dealer.eyebrow": "For retailers",
     "dealer.title": "Sell without risk.",
-    "dealer.p1": "Running a store for discerning plant lovers, CBD products, or a kiosk? „no dank.” runs on consignment — you carry nothing, we carry the rest.",
+    "dealer.p1": "Running a store for discerning plant lovers, CBD products, or a kiosk? „NO STANK.” runs on consignment — you carry nothing, we carry the rest.",
     "dealer.c1t": "Zero risk",
     "dealer.c1p": "Buy-back guarantee and retention of ownership — unsold stock is ours, not yours.",
     "dealer.c2t": "Margin",
@@ -106,7 +106,7 @@
 
     "shops.eyebrow": "Where to buy",
     "shops.title": "Soon in your store.",
-    "shops.p1": '„no dank.” is available in selected stores — the list is growing. <a href="#haendler">Your store doesn’t stock it yet? Join here.</a>',
+    "shops.p1": '„NO STANK.” is available in selected stores — the list is growing. <a href="#haendler">Your store doesn’t stock it yet? Join here.</a>',
 
     "legal.eyebrow": "Contact & legal notice",
     "legal.title": "Legal notice",
@@ -114,19 +114,19 @@
     "legal.note": "Sole proprietorship without commercial register entry.",
     "legal.title2": "Contact",
     "legal.p1": "Questions about the product, dosing or the retail consignment — write to us:",
-    "legal.cta": "kontakt@nodank.ch",
+    "legal.cta": "kontakt@nostank.ch",
 
-    "footer.line": "© 2026 „no dank.” — Odors. Simply gone. · nodank.ch"
+    "footer.line": "© 2026 „NO STANK.” — Odors. Simply gone. · nostank.ch"
   };
 
   var META = {
     de: {
-      title: "no dank. — Gerüche. Einfach weg.",
-      desc: "„no dank.” ist ein Säckchen mit 50 g Aktivkohle-Granulat aus Kokosschalen. Es bindet Gerüche in geschlossenen Räumen — nicht durch Parfüm, sondern durch Physik."
+      title: "NO STANK. — Gerüche. Einfach weg.",
+      desc: "„NO STANK.” ist ein Säckchen mit 50 g Aktivkohle-Granulat aus Kokosschalen. Es bindet Gerüche in geschlossenen Räumen — nicht durch Parfüm, sondern durch Physik."
     },
     en: {
-      title: "no dank. — Odors. Simply gone.",
-      desc: "„no dank.” is a small pouch with 50 g of coconut-shell activated carbon granulate. It binds odors in enclosed spaces — not with perfume, but with physics."
+      title: "NO STANK. — Odors. Simply gone.",
+      desc: "„NO STANK.” is a small pouch with 50 g of coconut-shell activated carbon granulate. It binds odors in enclosed spaces — not with perfume, but with physics."
     }
   };
 
@@ -166,13 +166,13 @@
     document.querySelectorAll(".lang-opt").forEach(function (el) {
       el.classList.toggle("active", el.getAttribute("data-lang") === lang);
     });
-    try { localStorage.setItem("nodank-lang", lang); } catch (e) {}
+    try { localStorage.setItem("nostank-lang", lang); } catch (e) {}
     updateCalc();
   }
 
   function initLang() {
     var saved = null;
-    try { saved = localStorage.getItem("nodank-lang"); } catch (e) {}
+    try { saved = localStorage.getItem("nostank-lang"); } catch (e) {}
     var nav = (navigator.language || "de").toLowerCase();
     var initial = saved || (nav.indexOf("de") === 0 ? "de" : "en");
     applyLang(initial === "en" ? "en" : "de");

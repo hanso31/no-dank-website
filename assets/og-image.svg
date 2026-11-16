@@ -5,7 +5,7 @@
   <image xlink:href="logo.svg" href="logo.svg" x="80" y="86" width="480" height="88.5"/>
   <text x="82" y="292" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="800" font-size="46" letter-spacing="-1" fill="#2B2723">Gerüche. Einfach weg.</text>
   <text x="84" y="348" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="500" font-size="22" fill="#6B645A">50 g Aktivkohle aus Kokosschalen.</text>
-  <text x="84" y="545" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="700" font-size="24" letter-spacing="1" fill="#948B7E">nodank.ch</text>
+  <text x="84" y="545" font-family="Inter, 'DejaVu Sans', sans-serif" font-weight="700" font-size="24" letter-spacing="1" fill="#948B7E">nostank.ch</text>
   <rect x="680" y="85" width="440" height="460" rx="26" fill="#FFFFFF"/>
   <image xlink:href="product-front-logo.png" href="product-front-logo.png" x="700" y="127" width="400" height="376"/>
 </svg>

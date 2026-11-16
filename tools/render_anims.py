@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""no dank. — Storyboard-Renderer: waves (Hero-Loop) + pore (Erklaer-Zoom).
+"""NO STANK. — Storyboard-Renderer: waves (Hero-Loop) + pore (Erklaer-Zoom).
 Rendert PNG-Frames via pycairo, Encodierung via ffmpeg (WebM+MP4)."""
 import cairo, math, os, sys, io
 from PIL import Image
