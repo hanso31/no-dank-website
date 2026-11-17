@@ -131,6 +131,9 @@ address { font-style: normal; }
 .hero-highlight { position: relative; width: max-content; margin-top: .13em; margin-left: .85em; color: var(--lime); z-index: 1; transform: rotate(-3deg); }
 .hero-highlight::before { content: ''; position: absolute; inset: -.04em -.16em -.03em; z-index: -1; background: var(--kohle); border-radius: 45% 20% 42% 24%; }
 .hero-sub { max-width: 53ch; font-size: 1.13rem; font-weight: 600; line-height: 1.6; }
+.hero-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 14px; margin-top: 20px; }
+.hero-price strong { font-family: var(--font-display); font-size: 2.25rem; font-weight: 400; line-height: 1; }
+.hero-price span { font-weight: 800; }
 .hero-cta { display: flex; align-items: center; gap: 28px; margin-top: 32px; }
 .hero-visual { position: relative; align-self: end; min-height: 600px; display: grid; align-items: end; justify-items: center; }
 .hero-photo-wrap { position: relative; width: min(440px, 93%); z-index: 2; transform: rotate(2.2deg); transform-origin: bottom center; }
@@ -280,22 +283,31 @@ address { font-style: normal; }
 .step-card h3 { margin-bottom: 12px; font-size: 1.16rem; line-height: 1.15; }
 .step-card p { color: #4B453E; font-size: .91rem; line-height: 1.55; }
 
-.legal-section { padding-block: 84px; background: var(--papier-hell); }
-.legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; }
-.legal-grid h2 { margin: 16px 0 24px; font-size: 3.4rem; }
-.legal-grid address { font-size: 1.05rem; line-height: 1.8; }
-.legal-grid address a { font-weight: 800; }
-.legal-grid .fine { margin-top: 16px; }
-.contact-card { position: relative; padding: 34px; background: var(--papier); border: var(--border); border-radius: 24px; }
-.contact-card h2 { margin-top: 0; }
-.contact-card p { max-width: 44ch; margin-bottom: 23px; }
-.contact-icon { position: absolute; right: 28px; top: 22px; font-family: var(--font-display); font-size: 2.5rem; }
+.purchase-section { background: var(--lime); border-top: var(--border); }
+.purchase-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
+.purchase-heading h2 { margin: 20px 0 26px; }
+.purchase-card { padding: 38px; background: var(--papier-hell); border: var(--border); border-radius: 26px; box-shadow: var(--hard-shadow); }
+.purchase-card-kicker { margin-bottom: 20px; font-family: var(--font-condensed); font-size: .92rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.purchase-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px 16px; margin-bottom: 30px; }
+.purchase-price strong { font-family: var(--font-display); font-size: clamp(3.2rem, 5vw, 4.8rem); font-weight: 400; line-height: 1; }
+.purchase-price span { font-weight: 800; }
+.purchase-card .btn { width: 100%; }
+.dealer-cta { display: grid; grid-template-columns: .65fr 1.35fr auto; gap: 36px; align-items: center; margin-top: 64px; padding-top: 40px; border-top: 2px solid rgba(43, 39, 35, .28); }
+.dealer-cta h3 { margin-top: 12px; font-family: var(--font-display); font-size: 2.2rem; font-weight: 400; text-transform: uppercase; }
+.dealer-cta > p { max-width: 62ch; font-size: .94rem; }
 
-.site-footer { padding: 36px 0; background: var(--kohle); color: var(--papier); }
+.safety-section { padding-block: 56px; background: var(--papier); }
+.safety-heading { margin-bottom: 28px; }
+.safety-heading h2 { margin-top: 14px; font-size: clamp(2.2rem, 4vw, 3.2rem); }
+.safety-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; list-style: none; }
+.safety-item { display: flex; align-items: flex-start; gap: 14px; padding: 20px; background: var(--papier-hell); border: 1.5px solid var(--kohle); border-radius: 16px; }
+.safety-icon { width: 32px; height: 32px; flex: 0 0 auto; fill: none; stroke: var(--kohle); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.safety-item span { font-size: .88rem; font-weight: 800; line-height: 1.45; }
+
+.site-footer { padding: 30px 0; background: var(--kohle); color: var(--papier); }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.footer-inner img { width: 175px; border-radius: 4px; }
-.footer-inner p { color: var(--stein-hell); font-size: .82rem; }
-.footer-inner a { font-family: var(--font-condensed); font-weight: 800; text-decoration: none; text-transform: uppercase; }
+.footer-inner p { color: var(--stein-hell); font-size: .9rem; }
+.footer-inner a { color: var(--papier); font-weight: 800; }
 .footer-inner a:hover { color: var(--lime); }
 
 .product-3d-wrap { aspect-ratio: 1 / 1.08; transform: none; }
@@ -368,7 +380,10 @@ address { font-style: normal; }
   .dose-grid { grid-template-columns: 1fr; gap: 45px; }
   .dose-grid > div:first-child { max-width: 650px; }
   .calc { transform: none; }
-  .legal-grid { gap: 50px; }
+  .purchase-grid { grid-template-columns: 1fr; gap: 45px; }
+  .dealer-cta { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .dealer-cta .text-link { grid-column: 1 / -1; }
+  .safety-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 760px) {
@@ -393,7 +408,8 @@ address { font-style: normal; }
   .court-visual { margin-left: 8px; }
   .pro-tip { grid-template-columns: 1fr; padding: 28px; }
   .pro-tip-label { grid-column: auto; }
-  .legal-grid { grid-template-columns: 1fr; }
+  .dealer-cta { grid-template-columns: 1fr; gap: 18px; margin-top: 45px; }
+  .dealer-cta .text-link { grid-column: auto; }
   .footer-inner { flex-wrap: wrap; }
 }
 
@@ -440,16 +456,18 @@ address { font-style: normal; }
   .calc { padding: 24px 18px; box-shadow: 6px 6px 0 var(--kohle); }
   .calc h3 { font-size: 1.7rem; }
   .calc-inputs { gap: 8px; }
-  .calc-inputs input { padding: 11px 24px 11px 9px; font-size: 1rem; }
+  .calc-inputs input { min-height: 48px; padding: 11px 24px 11px 9px; font-size: 1rem; }
   .calc-inputs .unit { right: 9px; }
   .calc-count { font-size: 2.25rem; }
   .calc-count span { font-size: 1.25rem; }
   .steps { grid-template-columns: 1fr; }
   .step-card { min-height: 0; }
   .step-num { margin-bottom: 20px; }
-  .legal-grid h2 { font-size: 3rem; }
-  .contact-card { padding: 25px; }
-  .contact-icon { right: 20px; top: 16px; }
+  .purchase-card { padding: 25px; }
+  .purchase-price strong { font-size: 3.5rem; }
+  .safety-section { padding-block: 44px; }
+  .safety-grid { grid-template-columns: 1fr; }
+  .safety-item { padding: 17px; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
 
