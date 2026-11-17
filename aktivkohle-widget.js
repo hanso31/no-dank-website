@@ -322,6 +322,7 @@
       offsetX = (width - WIDTH * scale) / 2;
       offsetY = (height - HEIGHT * scale) / 2;
       context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      render();
     }
 
     function beginScene(palette) {
