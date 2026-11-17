@@ -20,7 +20,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Lilita+One&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="aktivkohle-widget.css?v=2">
 <script type="module" src="assets/vendor/model-viewer.min.js"></script>
 </head>
 <body>
@@ -112,78 +113,86 @@
         <h2 data-i18n="wirkung.title">Physik statt<br>Parfüm.</h2>
         <p class="lead" data-i18n="wirkung.intro">Vom Geruch in der Luft bis ins Innerste eines Kohlekorns: Hier siehst du, wo die Moleküle bleiben.</p>
       </div>
-      <div class="explainer carbon-explainer" id="carbon-explainer" data-explainer data-active="1">
-        <div class="explainer-toolbar">
-          <div class="step-tabs" role="group" aria-label="Erklärschritte Aktivkohle">
-            <button class="step-tab active" type="button" data-step="1" aria-pressed="true"><span>01</span><span data-i18n="carbon.tab1">Geruch in der Luft</span></button>
-            <button class="step-tab" type="button" data-step="2" aria-pressed="false"><span>02</span><span data-i18n="carbon.tab2">Durchs Vlies</span></button>
-            <button class="step-tab" type="button" data-step="3" aria-pressed="false"><span>03</span><span data-i18n="carbon.tab3">In den Poren</span></button>
-          </div>
-          <button class="motion-toggle" type="button" data-motion-toggle aria-pressed="true"><span class="motion-icon" aria-hidden="true">▶</span><span data-i18n="explainer.play">Abspielen</span></button>
-        </div>
-        <div class="explainer-body">
-          <div class="carbon-canvas">
-            <svg class="carbon-svg" viewBox="0 0 1100 600" role="img" data-i18n-aria="carbon.aria" aria-label="Drei Vergrösserungsebenen: Geruchsmoleküle schweben zum Säckchen, passieren das Vlies und lagern sich in den Poren der Aktivkohle an">
-            <defs>
-              <pattern id="granules" width="36" height="32" patternUnits="userSpaceOnUse"><circle cx="8" cy="10" r="6" fill="#2B2723"/><circle cx="26" cy="21" r="8" fill="#48423B"/><circle cx="33" cy="4" r="4" fill="#6B645A"/></pattern>
-              <filter id="lime-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            </defs>
-            <path class="connect-path" d="M290 282C346 235 372 239 421 269"/>
-            <path class="connect-path" d="M670 282C727 235 754 239 805 269"/>
-            <g class="carbon-stage" data-stage="1">
-              <path d="M36 442Q169 481 313 442V184Q303 91 174 80Q45 91 36 184Z" fill="#EFEAE0"/>
-              <path d="M82 156H276V406H82Z" fill="#FFFDF8" stroke="#6B645A" stroke-width="4"/>
-              <path d="M179 156V406M82 275H276" fill="none" stroke="#6B645A" stroke-width="3"/>
-              <path d="M98 179h65v69H98zM196 300h63v78h-63z" fill="#E7E1D6"/>
-              <path d="M112 209c8-25 32-24 39 0M206 350c13-30 31-30 43 0" fill="none" stroke="#948B7E" stroke-width="8" stroke-linecap="round"/>
-              <path class="smell-line" d="M121 159c-21-23 19-29 0-54M223 149c-21-23 19-29 0-54"/>
-              <use href="#molecule-symbol" x="43" y="219" width="46" height="46" class="molecule-float"/>
-              <use href="#molecule-symbol" x="249" y="119" width="40" height="40" class="molecule-float delay-2"/>
-              <use href="#molecule-symbol" x="230" y="363" width="48" height="48" class="molecule-float delay-3"/>
-              <g class="molecule-travel"><use href="#molecule-symbol" x="-18" y="-18" width="36" height="36"/><animateMotion dur="4.5s" repeatCount="indefinite" path="M260 265C326 236 365 244 423 278"/></g>
-            </g>
-            <g class="carbon-stage" data-stage="2">
-              <path d="M382 116Q500 55 634 120Q691 242 663 406Q526 487 389 410Q347 260 382 116Z" fill="#D8FF3E"/>
-              <use href="#pouch-symbol" x="414" y="130" width="224" height="286"/>
-              <path d="M414 337Q512 363 638 337V414H414Z" fill="url(#granules)" opacity=".9" clip-path="inset(0 round 0 0 28px 28px)"/>
-              <path d="M414 337Q512 363 638 337" fill="none" stroke="#6B645A" stroke-width="3" stroke-dasharray="8 7"/>
-              <path class="pore-path" d="M393 254C440 256 445 315 477 342M658 240C602 253 604 306 567 347"/>
-              <g class="molecule-travel"><circle r="10" fill="#D8FF3E" stroke="#2B2723" stroke-width="3"/><animateMotion dur="3.8s" repeatCount="indefinite" path="M391 254C440 256 445 315 477 342"/></g>
-              <g class="molecule-travel"><circle r="8" fill="#D8FF3E" stroke="#2B2723" stroke-width="3"/><animateMotion dur="4.3s" begin="-2s" repeatCount="indefinite" path="M658 240C602 253 604 306 567 347"/></g>
-              <circle cx="632" cy="386" r="42" fill="#EFEAE0" stroke="#2B2723" stroke-width="3"/>
-              <path d="M658 414l36 35" stroke="#2B2723" stroke-width="12" stroke-linecap="round"/>
-              <circle cx="632" cy="386" r="27" fill="none" stroke="#948B7E" stroke-width="8" stroke-dasharray="4 7"/>
-            </g>
-            <g class="carbon-stage" data-stage="3">
-              <path d="M783 150Q849 60 975 98Q1084 149 1050 268Q1090 393 983 461Q854 482 781 390Q727 267 783 150Z" fill="#EFEAE0"/>
-              <path d="M829 157Q900 99 982 143Q1050 196 1019 270Q1050 348 978 408Q894 438 825 376Q775 295 829 157Z" fill="#2B2723" stroke="#6B645A" stroke-width="10"/>
-              <g fill="none" stroke="#6B645A" stroke-width="24" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M798 257Q858 278 894 242T980 211"/>
-                <path d="M895 242Q885 320 931 351T1018 340"/>
-                <path d="M931 351l-36 55M853 375l41-133M960 157l20 54"/>
-              </g>
-              <g fill="none" stroke="#D8FF3E" stroke-width="3" stroke-dasharray="5 9" opacity=".65">
-                <path d="M798 257Q858 278 894 242T980 211"/>
-                <path d="M895 242Q885 320 931 351T1018 340"/>
-              </g>
-              <g filter="url(#lime-glow)" fill="#D8FF3E">
-                <circle cx="855" cy="266" r="8"/><circle cx="899" cy="233" r="9"/><circle cx="953" cy="221" r="7"/><circle cx="907" cy="317" r="8"/><circle cx="947" cy="363" r="9"/>
-              </g>
-              <g class="molecule-travel"><use href="#molecule-symbol" x="-18" y="-18" width="36" height="36"/><animateMotion dur="4s" repeatCount="indefinite" path="M783 250C828 274 862 275 894 242S950 215 980 211"/></g>
-              <path class="bound-ring" d="M885 211q19-16 35 1M921 333q21-7 32 10" fill="none" stroke="#D8FF3E" stroke-width="3" stroke-linecap="round"/>
-            </g>
-          </svg>
-        </div>
-          <div class="explainer-copy">
-            <div class="explainer-notes" aria-live="polite">
-              <p class="explainer-note active" data-note="1" data-i18n="carbon.note1"><strong>Riechen ist Moleküle wahrnehmen.</strong> Die kleinen Teilchen schweben frei durch die Luft.</p>
-              <p class="explainer-note" data-note="2" data-i18n="carbon.note2"><strong>Das Vlies lässt Luft durch.</strong> Im Inneren wartet Aktivkohle-Granulat aus Kokosschalen.</p>
-              <p class="explainer-note" data-note="3" data-i18n="carbon.note3"><strong>Adsorption statt Überdeckung.</strong> Die Moleküle haften an der riesigen inneren Oberfläche — und bleiben dort.</p>
+      <section class="ak-widget-root" data-ak-widget aria-label="Interaktive Visualisierung: Funktionsweise von Aktivkohle" data-i18n-aria="ak.aria">
+        <div class="ak-widget-layout">
+          <div class="ak-widget-visual">
+            <div class="ak-widget-stage" data-ak-stage tabindex="0" aria-label="Visualisierung. Mit dem Mausrad, durch Wischen oder mit den Pfeiltasten zwischen den Kapiteln wechseln." data-i18n-aria="ak.stageAria">
+              <canvas class="ak-widget-canvas" data-ak-canvas role="img" aria-label="Verschmutztes Wasser oder Luft strömt auf ein Aktivkohlekorn zu.">Ihr Browser unterstützt kein HTML5 Canvas. Die Texte neben der Grafik erklären alle vier Kapitel.</canvas>
+              <span class="ak-widget-view-badge" data-ak-view>Makro-Ansicht</span>
+              <span class="ak-widget-stage-hint" data-ak-hint data-i18n="ak.hint">Scrollen oder wischen zum Blättern</span>
             </div>
-            <span class="explainer-counter"><span data-current-step>01</span> / 03</span>
+            <div class="ak-widget-legend" aria-label="Legende">
+              <span><i class="ak-widget-legend-dot ak-widget-legend-pollutant" aria-hidden="true"></i><span data-i18n="ak.legendPollutant">Schadstoffe</span></span>
+              <span><i class="ak-widget-legend-dot ak-widget-legend-water" aria-hidden="true"></i><span data-i18n="ak.legendMedium">Wasser / Luft</span></span>
+              <span><i class="ak-widget-legend-dot ak-widget-legend-carbon" aria-hidden="true"></i><span data-i18n="ak.legendCarbon">Aktivkohle</span></span>
+            </div>
+          </div>
+
+          <div class="ak-widget-content">
+            <article class="ak-widget-panel" data-ak-panel="0" role="tabpanel">
+              <p class="ak-widget-kicker" data-i18n="ak.kicker1">Kapitel 01 · Überblick</p>
+              <h3 class="ak-widget-heading" data-i18n="ak.heading1">Alles beginnt an der Oberfläche.</h3>
+              <p class="ak-widget-text" data-i18n="ak.text1">Wasser oder Luft transportiert Schadstoff- und Geruchsmoleküle an das Aktivkohlekorn. Die blauen Moleküle stehen für das Medium, die braunen und grauen Teilchen für gelöste oder schwebende Verbindungen.</p>
+              <div class="ak-widget-fact">
+                <span class="ak-widget-fact-label" data-i18n="ak.factLabel1">Der entscheidende Unterschied</span>
+                <strong data-i18n="ak.factTitle1">Adsorption statt Absorption</strong>
+                <p data-i18n="ak.factText1">Bei der Adsorption lagern sich Stoffe an einer Oberfläche an – sie werden nicht einfach wie bei einem Schwamm im Inneren verteilt.</p>
+              </div>
+            </article>
+
+            <article class="ak-widget-panel" data-ak-panel="1" role="tabpanel" hidden>
+              <p class="ak-widget-kicker" data-i18n="ak.kicker2">Kapitel 02 · Porenstruktur</p>
+              <h3 class="ak-widget-heading" data-i18n="ak.heading2">Ein Korn. Ein riesiges Innenleben.</h3>
+              <p class="ak-widget-text" data-i18n="ak.text2">Der Zoom öffnet ein verzweigtes Netz: Makroporen führen ins Innere, Mesoporen verteilen den Strom und Mikroporen bieten unzählige Bindungsstellen. Die Porengrössen sind hier modellhaft vergrössert.</p>
+              <div class="ak-widget-fact ak-widget-fact-accent">
+                <span class="ak-widget-fact-label" data-i18n="ak.factLabel2">Innere Oberfläche</span>
+                <strong>1 g = bis zu 1.500 m²</strong>
+                <p data-i18n="ak.factText2">Die hochporöse Struktur schafft eine enorme Kontaktfläche – je nach Aktivkohleart und Messverfahren.</p>
+              </div>
+            </article>
+
+            <article class="ak-widget-panel" data-ak-panel="2" role="tabpanel" hidden>
+              <p class="ak-widget-kicker" data-i18n="ak.kicker3">Kapitel 03 · Adsorption</p>
+              <h3 class="ak-widget-heading" data-i18n="ak.heading3">Anziehen. Andocken. Festhalten.</h3>
+              <p class="ak-widget-text" data-i18n="ak.text3">Schadstoffmoleküle nähern sich den Porenwänden und werden durch Van-der-Waals-Kräfte angezogen. Sie docken an und bleiben haften. Die blauen Wasser- oder Luftmoleküle passieren die Kanäle weitgehend ungehindert.</p>
+              <div class="ak-widget-fact">
+                <span class="ak-widget-fact-label" data-i18n="ak.factLabel3">Physikalische Anziehung</span>
+                <strong>Van-der-Waals-Kräfte</strong>
+                <p data-i18n="ak.factText3">Die schematischen Verbindungslinien markieren den Moment, in dem ein Molekül eine freie Bindungsstelle erreicht.</p>
+              </div>
+            </article>
+
+            <article class="ak-widget-panel" data-ak-panel="3" role="tabpanel" hidden>
+              <p class="ak-widget-kicker" data-i18n="ak.kicker4">Kapitel 04 · Ergebnis &amp; Sättigung</p>
+              <h3 class="ak-widget-heading" data-i18n="ak.heading4">Sauber – aber nicht unbegrenzt.</h3>
+              <p class="ak-widget-text" data-i18n="ak.text4">Am Ausgang ist die Konzentration der dargestellten Schadstoffe deutlich reduziert. Mit der Zeit belegen immer mehr Moleküle die freien Stellen an den Porenwänden. Ist die Kohle gesättigt, lässt ihre Bindungsleistung nach.</p>
+              <div class="ak-widget-saturation" data-ak-saturation>
+                <div class="ak-widget-saturation-copy"><span data-i18n="ak.saturation">Belegte Bindungsstellen</span><strong data-ak-saturation-value>15 %</strong></div>
+                <div class="ak-widget-meter" role="meter" aria-label="Belegte Bindungsstellen" data-i18n-aria="ak.saturation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="15" data-ak-meter><span data-ak-meter-fill></span></div>
+              </div>
+              <div class="ak-widget-fact">
+                <span class="ak-widget-fact-label" data-i18n="ak.factLabel4">Wichtig für die Anwendung</span>
+                <strong data-i18n="ak.factTitle4">Rechtzeitig ersetzen oder regenerieren</strong>
+                <p data-i18n="ak.factText4">Der richtige Zeitpunkt hängt von Belastung, Medium und Einsatz ab. Gesättigte Aktivkohle fachgerecht austauschen oder regenerieren lassen.</p>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
+
+        <div class="ak-widget-controls">
+          <div class="ak-widget-tabs" role="tablist" aria-label="Kapitel auswählen" data-i18n-aria="ak.tabsAria">
+            <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="0" aria-selected="true"><span class="ak-widget-tab-number">01</span><span class="ak-widget-tab-label" data-i18n="ak.tab1">Überblick</span></button>
+            <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="1" aria-selected="false" tabindex="-1"><span class="ak-widget-tab-number">02</span><span class="ak-widget-tab-label" data-i18n="ak.tab2">Poren</span></button>
+            <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="2" aria-selected="false" tabindex="-1"><span class="ak-widget-tab-number">03</span><span class="ak-widget-tab-label" data-i18n="ak.tab3">Adsorption</span></button>
+            <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="3" aria-selected="false" tabindex="-1"><span class="ak-widget-tab-number">04</span><span class="ak-widget-tab-label" data-i18n="ak.tab4">Sättigung</span></button>
+          </div>
+          <div class="ak-widget-actions">
+            <button class="ak-widget-action ak-widget-play" type="button" data-ak-play aria-pressed="true" aria-label="Animation pausieren"><svg class="ak-widget-icon" viewBox="0 0 20 20" aria-hidden="true"><path data-ak-play-icon d="M6 4h3v12H6zM12 4h3v12h-3z" fill="currentColor"></path></svg><span data-ak-play-label>Pause</span></button>
+            <button class="ak-widget-action" type="button" data-ak-reset aria-label="Visualisierung zurücksetzen" data-i18n-aria="ak.resetAria"><svg class="ak-widget-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.7 5.1A7 7 0 1 0 17 12h-2.2a4.8 4.8 0 1 1-1-5.2L11 9.5h6.5V3z" fill="currentColor"></path></svg><span data-i18n="ak.reset">Reset</span></button>
+          </div>
+        </div>
+        <p class="ak-widget-live" data-ak-live aria-live="polite"></p>
+      </section>
       <div class="carbon-copy-grid">
         <p class="body-large" data-i18n="wirkung.p1">Aktivkohle hat eine riesige innere Oberfläche — ein einziges Gramm hat die Fläche eines Tennisplatzes. Geruchsmoleküle lagern sich an dieser Oberfläche an (<strong>Adsorption</strong>) und bleiben dort. Es wird nichts überdeckt, es wird nichts maskiert: Der Geruch verschwindet, weil er gebunden wird.</p>
         <div class="difference-card"><span class="difference-icon" aria-hidden="true">≠</span><p data-i18n="wirkung.diff"><strong>Der Unterschied zu Duftsprays:</strong> Sprays fügen einen neuen Geruch hinzu. Aktivkohle nimmt den alten weg.</p></div>
@@ -331,6 +340,7 @@
 
 <footer class="site-footer"><div class="wrap footer-inner"><img src="assets/brand-wordmark.svg" alt="NO STANK." width="206" height="44"><p data-i18n="footer.line">© 2026 NO STANK. — Gestank. Einfach weg. · nostank.ch</p><a href="#top" data-i18n="footer.top">Nach oben ↑</a></div></footer>
 <script src="product-3d.js?v=3"></script>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
+<script src="aktivkohle-widget.js?v=2"></script>
 </body>
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de" class="ak-widget-document">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interaktive Visualisierung: Wie Aktivkohle Schadstoffe und Geruchsmoleküle durch Adsorption bindet.">
+  <title>Wie Aktivkohle funktioniert – interaktive Visualisierung</title>
+  <link rel="stylesheet" href="aktivkohle-widget.css">
+  <script src="aktivkohle-widget.js" defer></script>
+</head>
+<body class="ak-widget-page">
+  <section class="ak-widget-root" data-ak-widget aria-label="Interaktive Visualisierung: Funktionsweise von Aktivkohle">
+    <header class="ak-widget-header">
+      <div>
+        <p class="ak-widget-eyebrow"><span class="ak-widget-eyebrow-dot" aria-hidden="true"></span>Physik statt Parfüm</p>
+        <h2 class="ak-widget-title">Wie Aktivkohle bindet.</h2>
+        <p class="ak-widget-intro">Vom verschmutzten Medium bis zur gebundenen Verbindung – vier Kapitel zeigen den Weg ins Innere eines Kohlekorns.</p>
+      </div>
+      <div class="ak-widget-counter" aria-hidden="true"><strong data-ak-current>01</strong><span>/ 04</span></div>
+    </header>
+
+    <div class="ak-widget-layout">
+      <div class="ak-widget-visual">
+        <div class="ak-widget-stage" data-ak-stage tabindex="0" aria-label="Visualisierung. Mit dem Mausrad, durch Wischen oder mit den Pfeiltasten zwischen den Kapiteln wechseln.">
+          <canvas class="ak-widget-canvas" data-ak-canvas role="img" aria-label="Verschmutztes Wasser oder Luft strömt auf ein Aktivkohlekorn zu.">
+            Ihr Browser unterstützt kein HTML5 Canvas. Die Texte neben der Grafik erklären alle vier Kapitel.
+          </canvas>
+          <span class="ak-widget-view-badge" data-ak-view>Makro-Ansicht</span>
+          <span class="ak-widget-stage-hint" data-ak-hint>Scrollen oder wischen zum Blättern</span>
+        </div>
+        <div class="ak-widget-legend" aria-label="Legende">
+          <span><i class="ak-widget-legend-dot ak-widget-legend-pollutant" aria-hidden="true"></i>Schadstoffe</span>
+          <span><i class="ak-widget-legend-dot ak-widget-legend-water" aria-hidden="true"></i>Wasser / Luft</span>
+          <span><i class="ak-widget-legend-dot ak-widget-legend-carbon" aria-hidden="true"></i>Aktivkohle</span>
+        </div>
+      </div>
+
+      <div class="ak-widget-content">
+        <article class="ak-widget-panel" data-ak-panel="0" role="tabpanel">
+          <p class="ak-widget-kicker">Kapitel 01 · Überblick</p>
+          <h3 class="ak-widget-heading">Alles beginnt an der Oberfläche.</h3>
+          <p class="ak-widget-text">Wasser oder Luft transportiert Schadstoff- und Geruchsmoleküle an das Aktivkohlekorn. Die blauen Moleküle stehen für das Medium, die braunen und grauen Teilchen für gelöste oder schwebende Verbindungen.</p>
+          <div class="ak-widget-fact">
+            <span class="ak-widget-fact-label">Der entscheidende Unterschied</span>
+            <strong>Adsorption statt Absorption</strong>
+            <p>Bei der Adsorption lagern sich Stoffe an einer Oberfläche an – sie werden nicht einfach wie bei einem Schwamm im Inneren verteilt.</p>
+          </div>
+        </article>
+
+        <article class="ak-widget-panel" data-ak-panel="1" role="tabpanel" hidden>
+          <p class="ak-widget-kicker">Kapitel 02 · Porenstruktur</p>
+          <h3 class="ak-widget-heading">Ein Korn. Ein riesiges Innenleben.</h3>
+          <p class="ak-widget-text">Der Zoom öffnet ein verzweigtes Netz: Makroporen führen ins Innere, Mesoporen verteilen den Strom und Mikroporen bieten unzählige Bindungsstellen. Die Porengrössen sind hier modellhaft vergrössert.</p>
+          <div class="ak-widget-fact ak-widget-fact-accent">
+            <span class="ak-widget-fact-label">Innere Oberfläche</span>
+            <strong>1 g = bis zu 1.500 m²</strong>
+            <p>Die hochporöse Struktur schafft eine enorme Kontaktfläche – je nach Aktivkohleart und Messverfahren.</p>
+          </div>
+        </article>
+
+        <article class="ak-widget-panel" data-ak-panel="2" role="tabpanel" hidden>
+          <p class="ak-widget-kicker">Kapitel 03 · Adsorption</p>
+          <h3 class="ak-widget-heading">Anziehen. Andocken. Festhalten.</h3>
+          <p class="ak-widget-text">Schadstoffmoleküle nähern sich den Porenwänden und werden durch Van-der-Waals-Kräfte angezogen. Sie docken an und bleiben haften. Die blauen Wasser- oder Luftmoleküle passieren die Kanäle weitgehend ungehindert.</p>
+          <div class="ak-widget-fact">
+            <span class="ak-widget-fact-label">Physikalische Anziehung</span>
+            <strong>Van-der-Waals-Kräfte</strong>
+            <p>Die schematischen Verbindungslinien markieren den Moment, in dem ein Molekül eine freie Bindungsstelle erreicht.</p>
+          </div>
+        </article>
+
+        <article class="ak-widget-panel" data-ak-panel="3" role="tabpanel" hidden>
+          <p class="ak-widget-kicker">Kapitel 04 · Ergebnis &amp; Sättigung</p>
+          <h3 class="ak-widget-heading">Sauber – aber nicht unbegrenzt.</h3>
+          <p class="ak-widget-text">Am Ausgang ist die Konzentration der dargestellten Schadstoffe deutlich reduziert. Mit der Zeit belegen immer mehr Moleküle die freien Stellen an den Porenwänden. Ist die Kohle gesättigt, lässt ihre Bindungsleistung nach.</p>
+          <div class="ak-widget-saturation" data-ak-saturation>
+            <div class="ak-widget-saturation-copy"><span>Belegte Bindungsstellen</span><strong data-ak-saturation-value>15 %</strong></div>
+            <div class="ak-widget-meter" role="meter" aria-label="Belegte Bindungsstellen" aria-valuemin="0" aria-valuemax="100" aria-valuenow="15" data-ak-meter><span data-ak-meter-fill></span></div>
+          </div>
+          <div class="ak-widget-fact">
+            <span class="ak-widget-fact-label">Wichtig für die Anwendung</span>
+            <strong>Rechtzeitig ersetzen oder regenerieren</strong>
+            <p>Der richtige Zeitpunkt hängt von Belastung, Medium und Einsatz ab. Gesättigte Aktivkohle fachgerecht austauschen oder regenerieren lassen.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="ak-widget-controls">
+      <div class="ak-widget-tabs" role="tablist" aria-label="Kapitel auswählen">
+        <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="0" aria-selected="true">
+          <span class="ak-widget-tab-number">01</span><span class="ak-widget-tab-label">Überblick</span>
+        </button>
+        <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="1" aria-selected="false" tabindex="-1">
+          <span class="ak-widget-tab-number">02</span><span class="ak-widget-tab-label">Poren</span>
+        </button>
+        <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="2" aria-selected="false" tabindex="-1">
+          <span class="ak-widget-tab-number">03</span><span class="ak-widget-tab-label">Adsorption</span>
+        </button>
+        <button class="ak-widget-tab" type="button" role="tab" data-ak-tab="3" aria-selected="false" tabindex="-1">
+          <span class="ak-widget-tab-number">04</span><span class="ak-widget-tab-label">Sättigung</span>
+        </button>
+      </div>
+      <div class="ak-widget-actions">
+        <button class="ak-widget-action ak-widget-play" type="button" data-ak-play aria-pressed="true" aria-label="Animation pausieren">
+          <svg class="ak-widget-icon" viewBox="0 0 20 20" aria-hidden="true"><path data-ak-play-icon d="M6 4h3v12H6zM12 4h3v12h-3z" fill="currentColor"></path></svg>
+          <span data-ak-play-label>Pause</span>
+        </button>
+        <button class="ak-widget-action" type="button" data-ak-reset aria-label="Visualisierung zurücksetzen">
+          <svg class="ak-widget-icon" viewBox="0 0 20 20" aria-hidden="true"><path d="M15.7 5.1A7 7 0 1 0 17 12h-2.2a4.8 4.8 0 1 1-1-5.2L11 9.5h6.5V3z" fill="currentColor"></path></svg>
+          <span>Reset</span>
+        </button>
+      </div>
+    </div>
+    <p class="ak-widget-live" data-ak-live aria-live="polite"></p>
+  </section>
+</body>
+</html>
