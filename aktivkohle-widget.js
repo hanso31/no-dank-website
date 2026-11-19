@@ -569,6 +569,9 @@
       canvas.setAttribute("aria-label", copy().canvas[chapter]);
       if (options.announce) liveLabel.textContent = `${copy().chapter} ${chapter + 1}: ${copy().views[chapter]}. ${copy().paused}`;
       render();
+      stage.classList.add("is-switching");
+      clearTimeout(stage._transitionTimer);
+      stage._transitionTimer = setTimeout(() => stage.classList.remove("is-switching"), 140);
     }
 
     function manualChapter(index, focusTab = false) {

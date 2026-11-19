@@ -69,6 +69,14 @@
     "wirkung.compare2": "of internal surface area, binding odors",
     "wirkung.compareNum1": "1 g",
     "wirkung.compareNum2": "≈ 1 tennis court",
+    "coconut.aria": "Air flows through a pouch while odor molecules adhere to activated-carbon granulate made from coconut shells",
+    "coconut.caption": "Air flows through. Odors stay attached.",
+    "coconut.eyebrow": "Made from coconut shells",
+    "coconut.title": "Naturally porous.<br>More than just a filler.",
+    "coconut.text": "Coconut shells become activated carbon with countless tiny pores. This natural carrier material buffers moisture, prevents clumping and supports even airflow through the granulate.",
+    "coconut.point1": "Buffer moisture",
+    "coconut.point2": "Keep the granulate loose and permeable to air",
+    "coconut.point3": "Bind odors across a vast internal surface",
     "usage.eyebrow": "How do I use the pouches?",
     "usage.title": "Unpack.<br>Place. Done.",
     "usage.intro": "No spray, no power, no effort. Three steps — and the carbon does the rest.",
@@ -87,6 +95,17 @@
     "fan.li1": "Without a fan: place or hang it directly by the odor source",
     "fan.li2": "With a fan: hang it freely in a moderate airflow",
     "fan.li3": "Do not place it on the device or block its air inlet or outlet",
+    "scenario.growTitle": "In the grow box",
+    "scenario.growText": "Hang freely so air can flow around it from every side.",
+    "scenario.growAmount": "60×60 cm: 1–2 pouches",
+    "scenario.binTitle": "By the bin",
+    "scenario.binText": "Place next to the bin or by the lid without opening the pouch.",
+    "scenario.binAmount": "Small area: 1 pouch",
+    "scenario.cabinetTitle": "In a cabinet",
+    "scenario.cabinetText": "Place on a shelf or hang by the drawstring; leave it uncovered.",
+    "scenario.cabinetAmount": "Up to approx. 1 m³: 1 pouch",
+    "scenario.check": "Check every 4–8 weeks",
+    "scenario.interval": "<strong>Care interval:</strong> Replace as needed or place in direct sunlight for several hours approx. every 3–6 months.",
     "dosis.eyebrow": "Dosing",
     "dosis.title": "The rule of thumb:<br>50–100 g per m³.",
     "dosis.p1": "One pouch (50&nbsp;g) is ideal for small, enclosed spaces up to approx. 1&nbsp;m³ — e.g. cabinets, bin areas, bathrooms — or the room where your tomatoes spend the winter.",
@@ -97,11 +116,8 @@
     "dosis.presetCab": "Cabinet",
     "dosis.presetWc": "Bathroom",
     "dosis.presetBin": "Bin area",
-    "dosis.len": "Length",
-    "dosis.wid": "Width",
-    "dosis.hei": "Height",
-    "dosis.unit": "m",
-    "dosis.volume": "Room volume",
+    "dosis.sliderAria": "Set the room size in cubic metres",
+    "dosis.volume": "Room size",
     "dosis.pouches": "pouches",
     "dosis.hint": "The higher the odor load, the closer to the upper end of the range you should dose.",
     "care.eyebrow": "Care & replacement",
@@ -129,7 +145,18 @@
     "safety.item1": "Not for consumption",
     "safety.item2": "Do not open",
     "safety.item3": "Keep away from children, animals and open flames",
-    "safety.item4": "Do not place near food."
+    "safety.item4": "Do not place near food.",
+    "form.name": "Name",
+    "form.email": "Email",
+    "form.quantity": "Desired quantity (optional)",
+    "form.message": "Message",
+    "form.submit": "Send request ↗",
+    "form.sending": "Sending your request …",
+    "form.success": "Thank you! Your request has been sent. We will reply by email.",
+    "form.error": "Sending failed. Please try again or write to info@nostank.ch.",
+    "footer.quicklinks": "Quick links",
+    "footer.imprint": "Legal notice",
+    "footer.language": "Language"
   };
 
   var META = {
@@ -174,10 +201,17 @@
       if (value !== undefined) el.setAttribute("aria-label", value);
     });
     document.documentElement.setAttribute("lang", lang);
-    document.title = META[lang].title;
-    document.querySelector('meta[name="description"]').setAttribute("content", META[lang].desc);
+    if (!document.body.hasAttribute("data-static-meta")) {
+      document.title = META[lang].title;
+      document.querySelector('meta[name="description"]').setAttribute("content", META[lang].desc);
+    }
     document.querySelectorAll(".lang-opt").forEach(function (el) {
       el.classList.toggle("active", el.getAttribute("data-lang") === lang);
+    });
+    document.querySelectorAll("[data-set-lang]").forEach(function (el) {
+      var active = el.getAttribute("data-set-lang") === lang;
+      el.classList.toggle("is-active", active);
+      el.setAttribute("aria-pressed", String(active));
     });
     try { localStorage.setItem("nostank-lang", lang); } catch (e) {}
     motionUpdaters.forEach(function (update) { update(); });
@@ -192,6 +226,9 @@
     document.getElementById("lang-toggle").addEventListener("click", function () {
       applyLang(currentLang === "de" ? "en" : "de");
     });
+    document.querySelectorAll("[data-set-lang]").forEach(function (button) {
+      button.addEventListener("click", function () { applyLang(button.getAttribute("data-set-lang")); });
+    });
   }
 
   var POUCH_SVG = '<svg viewBox="0 0 24 30" aria-hidden="true"><path d="M5 8Q12 5 19 8L18 26Q12 29 6 26Z" fill="#EFEAE0" stroke="#2B2723" stroke-width="1.4"/><path d="M5 6Q12 3 19 6v5Q12 13 5 11Z" fill="#C9C2B7" stroke="#2B2723" stroke-width="1.4"/><rect x="9" y="16" width="6" height="6" rx="1.5" fill="#6B645A"/><circle cx="11" cy="18" r=".7" fill="#D8FF3E"/><circle cx="13" cy="19.5" r=".7" fill="#D8FF3E"/><circle cx="11.3" cy="20.5" r=".7" fill="#D8FF3E"/></svg>';
@@ -202,10 +239,10 @@
   }
 
   function updateCalc() {
-    var lengthEl = document.getElementById("calc-l");
-    if (!lengthEl) return;
-    var volume = parseNum(lengthEl) * parseNum(document.getElementById("calc-b")) * parseNum(document.getElementById("calc-h"));
-    document.getElementById("calc-vol").textContent = volume.toLocaleString(currentLang === "en" ? "en-US" : "de-CH", { maximumFractionDigits: 2 });
+    var slider = document.getElementById("calc-size-input");
+    if (!slider) return;
+    var volume = parseNum(slider);
+    document.getElementById("calc-size").textContent = volume.toLocaleString(currentLang === "en" ? "en-US" : "de-CH", { maximumFractionDigits: 1 });
     var min = Math.max(1, Math.ceil(volume));
     var max = Math.max(min, Math.ceil(volume / .5));
     var row = document.getElementById("pouch-row");
@@ -223,23 +260,73 @@
   }
 
   function initCalc() {
-    ["calc-l", "calc-b", "calc-h"].forEach(function (id) {
-      document.getElementById(id).addEventListener("input", function () {
-        document.querySelectorAll(".calc-presets .chip").forEach(function (chip) { chip.classList.remove("active"); });
-        updateCalc();
-      });
+    var slider = document.getElementById("calc-size-input");
+    if (!slider) return;
+    slider.addEventListener("input", function () {
+      document.querySelectorAll(".calc-presets .chip").forEach(function (chip) { chip.classList.remove("active"); });
+      updateCalc();
     });
     document.querySelectorAll(".calc-presets .chip").forEach(function (chip) {
       chip.addEventListener("click", function () {
-        var dims = chip.getAttribute("data-preset").split(",");
-        document.getElementById("calc-l").value = dims[0];
-        document.getElementById("calc-b").value = dims[1];
-        document.getElementById("calc-h").value = dims[2];
+        slider.value = chip.getAttribute("data-preset");
         document.querySelectorAll(".calc-presets .chip").forEach(function (other) { other.classList.toggle("active", other === chip); });
         updateCalc();
       });
     });
     updateCalc();
+  }
+
+  function initNavigation() {
+    var progress = document.querySelector("[data-scroll-progress]");
+    var links = Array.prototype.slice.call(document.querySelectorAll(".site-nav a[href^='#']"));
+    var sections = links.map(function (link) { return document.querySelector(link.getAttribute("href")); }).filter(Boolean);
+    var scheduled = false;
+    var activeLink = null;
+
+    function update() {
+      var root = document.documentElement;
+      var max = Math.max(1, root.scrollHeight - window.innerHeight);
+      if (progress) progress.style.transform = "scaleX(" + Math.min(1, Math.max(0, window.scrollY / max)) + ")";
+      var current = "";
+      sections.forEach(function (section) {
+        if (section.getBoundingClientRect().top <= window.innerHeight * 0.38) current = section.id;
+      });
+      links.forEach(function (link) {
+        var active = link.getAttribute("href") === "#" + current;
+        link.classList.toggle("is-active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+      var nextActive = links.find(function (link) { return link.classList.contains("is-active"); }) || null;
+      if (nextActive && nextActive !== activeLink) {
+        var nav = nextActive.parentElement;
+        nav.scrollLeft = nextActive.offsetLeft - (nav.clientWidth - nextActive.offsetWidth) / 2;
+      }
+      activeLink = nextActive;
+      scheduled = false;
+    }
+
+    function schedule() {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(update);
+    }
+
+    window.addEventListener("scroll", schedule, { passive: true });
+    window.addEventListener("resize", schedule);
+    update();
+  }
+
+  function initAirflow() {
+    var demos = document.querySelectorAll("[data-airflow]");
+    if (!("IntersectionObserver" in window)) {
+      demos.forEach(function (demo) { demo.classList.add("is-visible"); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.classList.toggle("is-visible", entry.isIntersecting); });
+    }, { threshold: 0.2 });
+    demos.forEach(function (demo) { observer.observe(demo); });
   }
 
   function initExplainer(root) {
@@ -266,6 +353,9 @@
       });
       notes.forEach(function (note) { note.classList.toggle("active", Number(note.getAttribute("data-note")) === step); });
       counter.textContent = "0" + step;
+      root.classList.add("is-switching");
+      clearTimeout(root._transitionTimer);
+      root._transitionTimer = setTimeout(function () { root.classList.remove("is-switching"); }, 140);
     }
 
     function updateToggle() {
@@ -292,10 +382,53 @@
     syncPlayback();
   }
 
+  function initForm() {
+    var form = document.getElementById("contact-form");
+    if (!form) return;
+    var status = form.querySelector("[data-form-status]");
+    var button = form.querySelector("[type='submit']");
+    form.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      status.className = "form-status";
+      if (form.elements._honey.value) {
+        form.reset();
+        status.textContent = currentLang === "en" ? EN["form.success"] : "Danke! Deine Anfrage wurde gesendet. Wir melden uns per E-Mail.";
+        status.classList.add("is-success");
+        return;
+      }
+      button.disabled = true;
+      status.textContent = currentLang === "en" ? EN["form.sending"] : "Deine Anfrage wird gesendet …";
+      try {
+        var response = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+          method: "POST",
+          body: new FormData(form),
+          headers: { "Accept": "application/json" }
+        });
+        var result = await response.json();
+        if (!response.ok || !(result.success === true || result.success === "true")) throw new Error("Form submission failed");
+        form.reset();
+        status.textContent = currentLang === "en" ? EN["form.success"] : "Danke! Deine Anfrage wurde gesendet. Wir melden uns per E-Mail.";
+        status.classList.add("is-success");
+      } catch (error) {
+        status.textContent = currentLang === "en" ? EN["form.error"] : "Senden fehlgeschlagen. Versuche es erneut oder schreib an info@nostank.ch.";
+        status.classList.add("is-error");
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     captureDE();
     initLang();
     initCalc();
+    initNavigation();
+    initAirflow();
+    initForm();
     document.querySelectorAll("[data-explainer]").forEach(initExplainer);
   });
 })();
