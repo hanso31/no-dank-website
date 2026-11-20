@@ -11,6 +11,27 @@
     "nav.dosierung": "Dosing",
     "nav.pflege": "Care",
     "nav.bezug": "Contact",
+    "overview.tagline": "Neutralizes unwanted odors.",
+    "simpleUsage.eyebrow": "How do I use the pouches?",
+    "simpleUsage.title": "Three steps.<br>Then relax.",
+    "simpleUsage.hangTitle": "Hang",
+    "simpleUsage.hangText": "By the pouch, in the room. Done.",
+    "simpleUsage.forgetTitle": "Forget",
+    "simpleUsage.forgetText": "Works for approx. 3–6 months. If needed, place it in the sun for a few hours.",
+    "simpleUsage.replaceTitle": "Replace",
+    "simpleUsage.replaceText": "Old carbon out, new pouch in.",
+    "simpleUsage.bin": "Bin",
+    "simpleUsage.shoes": "Shoe cabinet",
+    "simpleUsage.wc": "Bathroom",
+    "simpleUsage.car": "Car",
+    "simpleCare.eyebrow": "Care & storage",
+    "simpleCare.title": "Keep it dry.<br>Use it again and again.",
+    "simpleCare.sunTitle": "Regenerate",
+    "simpleCare.sunText": "A few hours in direct sunlight. In winter, place it on the heater.",
+    "simpleCare.zipTitle": "Store in the zip bag",
+    "simpleCare.zipText": "Keep it sealed and dry in the zip bag until use.",
+    "simpleCare.dryTitle": "Unlimited shelf life",
+    "simpleCare.dryText": "Activated carbon has an unlimited shelf life as long as it stays dry.",
     "hero.kicker": "Activated-carbon pouch · 50 g · coconut shells",
     "hero.title": '<span>Odors.</span><span>Simply</span><span class="hero-highlight">gone.</span>',
     "hero.sub": "Keine Chemie. Nur Physik.",
@@ -417,10 +438,65 @@
     });
   }
 
+  function initTabs() {
+    var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-tab]"));
+    var panels = Array.prototype.slice.call(document.querySelectorAll("[data-tab-panel]"));
+    if (!buttons.length) return;
+
+    function nameFromHash() {
+      var name = window.location.hash.slice(1);
+      return buttons.some(function (button) { return button.dataset.tab === name; }) ? name : "wirkung";
+    }
+
+    function show(name) {
+      buttons.forEach(function (button) {
+        var active = button.dataset.tab === name;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-selected", String(active));
+        button.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach(function (panel) {
+        var active = panel.dataset.tabPanel === name;
+        panel.hidden = !active;
+        panel.classList.toggle("is-active", active);
+      });
+      document.body.setAttribute("data-active-tab", name);
+      window.scrollTo(0, 0);
+    }
+
+    buttons.forEach(function (button, index) {
+      button.addEventListener("click", function () {
+        if (window.location.hash === "#" + button.dataset.tab) show(button.dataset.tab);
+        else window.location.hash = button.dataset.tab;
+      });
+      button.addEventListener("keydown", function (event) {
+        var next = null;
+        if (event.key === "ArrowRight") next = (index + 1) % buttons.length;
+        if (event.key === "ArrowLeft") next = (index - 1 + buttons.length) % buttons.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = buttons.length - 1;
+        if (next !== null) {
+          event.preventDefault();
+          buttons[next].focus();
+          buttons[next].click();
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-tab-link]").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.location.hash === "#wirkung") show("wirkung");
+      });
+    });
+    window.addEventListener("hashchange", function () { show(nameFromHash()); });
+    show(nameFromHash());
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     captureDE();
     initLang();
     initCalc();
+    initTabs();
     initNavigation();
     initAirflow();
     initForm();
