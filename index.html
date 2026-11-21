@@ -17,8 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Lilita+One&family=Nunito+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=8">
-<link rel="stylesheet" href="aktivkohle-widget.css?v=3">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 <a class="skip-link" href="#main" data-i18n="a11y.skip">Zum Inhalt springen</a>
@@ -41,13 +40,20 @@
       <img src="assets/product-hero.webp" width="760" height="848" alt="NO STANK. Aktivkohle-Säckchen aus weissem Vlies, 50 g">
       <div class="overview-copy"><p data-i18n="hero.kicker">Aktivkohle-Säckchen · 50 g · Kokosnussschalen</p><p data-i18n="overview.tagline">Neutralisiert unerwünschte Gerüche.</p><p data-i18n="hero.fact3">Keine Chemie. Nur Physik.</p></div>
     </div></div>
-  <section class="section carbon-section" id="wirkung-content">
+  <section class="section wirkung-section" id="wirkung-content">
     <div class="wrap">
-      <div class="section-heading light-heading">
+      <div class="section-heading compact-wirkung-heading">
         <p class="eyebrow" data-i18n="wirkung.eyebrow">Wie funktioniert Aktivkohle?</p>
         <h2 data-i18n="wirkung.title">Keine Chemie.<br>Nur Physik.</h2>
-        <p class="lead" data-i18n="wirkung.intro">Vom Geruch in der Luft bis ins Innerste eines Kohlekorns: Hier siehst du, wo die Moleküle bleiben.</p>
+        <p class="lead" data-i18n="wirkung.summary">Aktivkohle bindet Geruchsmoleküle an ihrer inneren Oberfläche – ohne Duftstoffe. Luft strömt durchs Vlies, die Gerüche bleiben in den Poren.</p>
       </div>
+      <ol class="wirkung-timeline">
+        <li><span>01</span><div><strong data-i18n="ak.tab1">Überblick</strong><p data-i18n="timeline.one">Geruchsmoleküle treffen auf das Kohlekorn.</p></div></li>
+        <li><span>02</span><div><strong data-i18n="ak.tab2">Poren</strong><p data-i18n="timeline.two">Ein Gramm Kohle hat die Fläche eines Tennisplatzes.</p></div></li>
+        <li><span>03</span><div><strong data-i18n="ak.tab3">Adsorption</strong><p data-i18n="timeline.three">Moleküle lagern sich an der Oberfläche an.</p></div></li>
+        <li><span>04</span><div><strong data-i18n="ak.tab4">Sättigung</strong><p data-i18n="timeline.four">Irgendwann ist die Oberfläche voll – Sonne oder ersetzen.</p></div></li>
+      </ol>
+      <details class="widget-lazy" data-lazy-widget><summary data-i18n="widget.open">Visualisierung ansehen ▸</summary><div class="lazy-widget-content">
       <section class="ak-widget-root" data-ak-widget aria-label="Interaktive Visualisierung: Funktionsweise von Aktivkohle" data-i18n-aria="ak.aria">
         <div class="ak-widget-layout">
           <div class="ak-widget-visual">
@@ -128,17 +134,8 @@
         </div>
         <p class="ak-widget-live" data-ak-live aria-live="polite"></p>
       </section>
-      <div class="carbon-copy-grid">
-        <p class="body-large" data-i18n="wirkung.p1">Aktivkohle hat eine riesige innere Oberfläche — ein einziges Gramm hat die Fläche eines Tennisplatzes. Geruchsmoleküle lagern sich an dieser Oberfläche an (<strong>Adsorption</strong>) und bleiben dort. Es wird nichts überdeckt, es wird nichts maskiert: Der Geruch verschwindet, weil er gebunden wird.</p>
-        <div class="difference-card"><span class="difference-icon" aria-hidden="true">≠</span><p data-i18n="wirkung.diff"><strong>Der Unterschied zu Duftsprays:</strong> Sprays fügen einen neuen Geruch hinzu. Aktivkohle nimmt den alten weg.</p></div>
-      </div>
-      <div class="surface-compare">
-        <div class="granule-visual" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div><strong data-i18n="wirkung.compareNum1">1 g</strong><span data-i18n="wirkung.compare1">Aktivkohle — winzig, unscheinbar</span></div>
-        <svg viewBox="0 0 150 55" aria-hidden="true"><path d="M4 29C47 2 95 54 134 25M119 12l18 12-12 18"/></svg>
-        <div class="court-visual" aria-hidden="true"><span></span></div>
-        <div><strong data-i18n="wirkung.compareNum2">≈ 1 Tennisplatz</strong><span data-i18n="wirkung.compare2">innere Oberfläche, an der Gerüche gebunden werden</span></div>
-      </div>
+      </div></details>
+      <div class="difference-card compact-difference"><span class="difference-icon" aria-hidden="true">≠</span><p data-i18n="wirkung.diff"><strong>Der Unterschied zu Duftsprays:</strong> Sprays fügen einen neuen Geruch hinzu. Aktivkohle nimmt den alten weg.</p></div>
       <div class="coconut-card">
         <div class="coconut-visual airflow-demo" data-airflow>
           <svg viewBox="0 0 480 320" role="img" data-i18n-aria="coconut.aria" aria-label="Luft strömt durch ein Säckchen; Geruchsmoleküle bleiben am Aktivkohle-Granulat aus Kokosnussschalen haften">
@@ -162,6 +159,7 @@
     </div>
   </section>
   </section>
+
   <section class="tab-panel" id="tab-anwendung" data-tab-panel="anwendung" role="tabpanel" aria-labelledby="tab-button-anwendung" hidden>
   <section class="section simple-tab-section">
     <div class="wrap">
@@ -181,8 +179,7 @@
       <div>
         <p class="eyebrow" data-i18n="dosis.eyebrow">Dosierung</p>
         <h2 data-i18n="dosis.title">Die Faustregel:<br>50–100 g pro m³.</h2>
-        <p class="lead" data-i18n="dosis.p1">Ein Säckchen (50&nbsp;g) ist ideal für kleine, geschlossene Räume bis ca. 1&nbsp;m³ — z.&nbsp;B. Schränke, Abfalleimer-Umgebung, WC — oder das Zimmer, in dem deine Tomaten überwintern.</p>
-        <div class="multi-note"><span aria-hidden="true">+</span><p data-i18n="dosis.multi"><strong>Für grössere Räume:</strong> verteile mehrere Säckchen (Multi-Sack-Strategie). So bleibt die Kontaktfläche pro Volumen hoch.</p></div>
+        <ul class="compact-points"><li data-i18n="dosis.short1">Bis 1 m³: 1 Säckchen (50 g).</li><li data-i18n="dosis.short2">Grössere Räume: mehrere Säckchen verteilen.</li></ul>
       </div>
       <div class="calc" role="group" aria-labelledby="calc-title">
         <p class="calc-kicker" data-i18n="dosis.calcKicker">Der Säckchen-Rechner</p>
@@ -221,8 +218,8 @@
       <div class="purchase-grid">
         <div class="purchase-heading">
           <p class="eyebrow" data-i18n="purchase.eyebrow">Für Shopbesitzer</p>
-          <h2 data-i18n="purchase.title">NO STANK. für<br>deinen Shop.</h2>
-          <p class="lead" data-i18n="purchase.intro">Du möchtest NO STANK. in dein Sortiment aufnehmen? Erzähl uns kurz von deinem Shop und der gewünschten Menge. Wir besprechen Bezug, Konditionen und optionalen Kommissionsverkauf persönlich.</p>
+          <h2 data-i18n="purchase.title">Für deinen Shop.</h2>
+          <ul class="compact-points"><li data-i18n="purchase.short1">Sortiment und gewünschte Menge angeben.</li><li data-i18n="purchase.short2">Konditionen persönlich; Kommission optional.</li></ul>
         </div>
         <div class="purchase-card">
           <p class="purchase-card-kicker" data-i18n="purchase.cardKicker">Kontakt für Shopbesitzer</p>
@@ -260,7 +257,6 @@
   </section>
 </main>
 <footer class="minimal-footer"><span>© NO STANK.</span><a href="mailto:info@nostank.ch">info@nostank.ch</a></footer>
-<script src="app.js?v=9"></script>
-<script src="aktivkohle-widget.js?v=4"></script>
+<script src="app.js?v=16"></script>
 </body>
 </html>

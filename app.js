@@ -12,6 +12,16 @@
     "nav.pflege": "Care",
     "nav.bezug": "Contact",
     "overview.tagline": "Neutralizes unwanted odors.",
+    "widget.open": "View visualization ▸",
+    "wirkung.summary": "Activated carbon binds odor molecules to its internal surface without fragrances. Air flows through the fabric, while odors remain in the pores.",
+    "timeline.one": "Odor molecules meet the carbon granule.",
+    "timeline.two": "One gram of carbon has the surface area of a tennis court.",
+    "timeline.three": "Molecules adhere to the surface.",
+    "timeline.four": "Eventually the surface is full – sunlight or replace.",
+    "dosis.short1": "Up to 1 m³: 1 pouch (50 g).",
+    "dosis.short2": "Larger rooms: distribute several pouches.",
+    "purchase.short1": "Tell us about your range and desired quantity.",
+    "purchase.short2": "Terms discussed personally; consignment optional.",
     "simpleUsage.eyebrow": "How do I use the pouches?",
     "simpleUsage.title": "Three steps.<br>Then relax.",
     "simpleUsage.hangTitle": "Hang",
@@ -153,7 +163,7 @@
     "care.s4t": "Or replace",
     "care.s4p": "If a grease or moisture layer has built up, regeneration is limited — then replacing it is the honest solution.",
     "purchase.eyebrow": "For shop owners",
-    "purchase.title": "NO STANK. for<br>your shop.",
+    "purchase.title": "For your shop.",
     "purchase.intro": "Would you like to add NO STANK. to your range? Tell us briefly about your shop and desired quantity. We will discuss availability, terms and optional consignment sales personally.",
     "purchase.cardKicker": "Contact for shop owners",
     "safety.eyebrow": "Good to know",
@@ -458,6 +468,7 @@
       panels.forEach(function (panel) {
         var active = panel.dataset.tabPanel === name;
         panel.hidden = !active;
+        panel.style.display = active ? "block" : "none";
         panel.classList.toggle("is-active", active);
       });
       document.body.setAttribute("data-active-tab", name);
@@ -492,11 +503,29 @@
     show(nameFromHash());
   }
 
+  function initLazyWidget() {
+    var details = document.querySelector("[data-lazy-widget]");
+    if (!details) return;
+    var loaded = false;
+    details.addEventListener("toggle", function () {
+      if (!details.open || loaded || !window.matchMedia("(min-width: 769px)").matches) return;
+      loaded = true;
+      var stylesheet = document.createElement("link");
+      stylesheet.rel = "stylesheet";
+      stylesheet.href = "aktivkohle-widget.css?v=3";
+      document.head.appendChild(stylesheet);
+      var script = document.createElement("script");
+      script.src = "aktivkohle-widget.js?v=4";
+      document.body.appendChild(script);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     captureDE();
     initLang();
     initCalc();
     initTabs();
+    initLazyWidget();
     initNavigation();
     initAirflow();
     initForm();
